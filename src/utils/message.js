@@ -1,0 +1,34 @@
+import { Message, Loading, MessageBox } from 'element-ui';
+
+const duration = 1500;
+
+const messageHandler = type => message => Message({ message, duration, type });
+
+/**
+ * 成功消息
+ * @param {string} message
+ */
+export const successMessage = message => messageHandler('success')(message);
+
+/**
+ * 错误消息
+ * @param {string} message
+ */
+export const errorMessage = message => messageHandler('error')(message);
+
+let loadingInstance = { close() {} }; // 加个close函数, 保证调用时不报错
+
+export const loading = {
+  open() {
+    loadingInstance = Loading.service({
+      background: 'rgba(0,0,0,0.3)'
+    });
+  },
+  close() {
+    loadingInstance.close();
+  }
+};
+
+// MessageBox, MessageBox.alert, MessageBox.confirm 和 MessageBox.prompt，
+export const messageBoxAlert = message => MessageBox.alert(message);
+export const messageBoxConfirm = message => MessageBox.confirm(message);
