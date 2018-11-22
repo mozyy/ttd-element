@@ -3,6 +3,7 @@ src/utils/date.js
 examples/play
 *.sh
 node_modules
+lib
 coverage
 *.md
 *.scss
