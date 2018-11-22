@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { Logger, successMessage, errorMessage, loading } from '@/utils';
+import { successMessage, errorMessage, loading } from './message';
+import Logger from './Logger';
 import qs from 'qs';
 
 import { requireURL } from '@/env';
