@@ -8,7 +8,7 @@
       "main/*": ["src/*"],
       "packages/*": ["packages/*"],
       "examples/*": ["examples/*"],
-      "element-ui/*": ["./*"],
+      "ttd-element/*": ["./*"],
     }
   }
 }

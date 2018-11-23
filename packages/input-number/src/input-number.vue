@@ -45,9 +45,9 @@
   </div>
 </template>
 <script>
-  import ElInput from 'element-ui/packages/input';
-  import Focus from 'element-ui/src/mixins/focus';
-  import RepeatClick from 'element-ui/src/directives/repeat-click';
+  import ElInput from 'ttd-element/packages/input';
+  import Focus from 'ttd-element/src/mixins/focus';
+  import RepeatClick from 'ttd-element/src/directives/repeat-click';
 
   export default {
     name: 'ElInputNumber',
