@@ -18,6 +18,8 @@ function fileExists(filePath) {
 themes.forEach((theme) => {
   var isSCSS = theme !== 'theme-default';
   var indexContent = isSCSS ? `
+$--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径
+
 @import "~normalize.css"; // 消除浏览器差异
 @import "./base.scss";
 @import "./style.scss"; // 公共class
@@ -36,8 +38,5 @@ themes.forEach((theme) => {
       console.log(theme, ' 创建遗漏的 ', fileName, ' 文件');
     }
   });
-  if (isSCSS) {
-    indexContent += '\n\n$--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径';
-  }
   fs.writeFileSync(path.resolve(basepath, theme, 'src', isSCSS ? 'index.scss' : 'index.css'), indexContent);
 });
