@@ -9,16 +9,17 @@ import { errorMessage } from './message';
 AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.NONE);
 
 export default class RTC {
-  constructor() {
+  constructor(channel, streamSubscribedHandler = () => {}) {
     if (!AgoraRTC.checkSystemRequirements()) {
       alert('Your browser does not support WebRTC!');
     }
-    this.logger = new Logger('RTC', '#6495ed');
-  }
-
-  async init(channel, streamSubscribedHandler = () => {}) {
     this.channel = channel;
     this.streamSubscribedHandler = streamSubscribedHandler;
+    this.logger = new Logger('RTC', '#6495ed');
+    this.init();
+  }
+
+  async init() {
     await (this.initRTCPromise = this.initRTC());
   }
 
@@ -68,7 +69,7 @@ export default class RTC {
 
     localStream.init(() => {
       this.log('获取媒体成功');
-      localStream.play(customerServiceId);
+      localStream.play(customerServiceId || 'customer-service');
 
       this.client.publish(localStream, (err) => {
         this.log(`发布本地视频错误: ${err}`);
@@ -105,7 +106,7 @@ export default class RTC {
 
     client.on('stream-subscribed', ({ stream }) => {
       this.log(`Subscribe remote stream successfully: ${stream.getId()}`);
-      stream.play(clientId);
+      stream.play(clientId || 'client');
       this.streamSubscribedHandler(stream);
     });
 

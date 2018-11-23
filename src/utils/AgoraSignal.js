@@ -15,6 +15,7 @@ export default class Signal {
     this.account = account;
     this.onReceiveMessageFn = onReceiveMessageFn;
     this.onSignalOut = onSignalOut;
+    this.init();
   }
 
   async init() {
@@ -31,7 +32,7 @@ export default class Signal {
         clearInterval(this.loginTimer);
         this.init();
       }
-    }, signalInterval);
+    }, signalInterval || 5000);
   }
 
   async initChannelMessage() {

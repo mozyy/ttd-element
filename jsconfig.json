@@ -1,0 +1,14 @@
+{
+  "include": [
+    "./**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "main/*": ["src/*"],
+      "packages/*": ["packages/*"],
+      "examples/*": ["examples/*"],
+      "element-ui/*": ["./*"],
+    }
+  }
+}

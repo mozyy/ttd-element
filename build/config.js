@@ -37,7 +37,8 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'element-ui': path.resolve(__dirname, '../')
+  'element-ui': path.resolve(__dirname, '../'),
+  'ttd-element': 'element-ui'
 };
 
 exports.vue = {

@@ -1,4 +1,6 @@
+@import '~normalize.css'; // 消除各浏览器样式差异
 @import "./base.scss";
+@import "./style.scss"; // 常用class
 @import "./pagination.scss";
 @import "./dialog.scss";
 @import "./autocomplete.scss";
@@ -65,3 +67,5 @@
 @import "./aside.scss";
 @import "./main.scss";
 @import "./footer.scss";
+
+$--font-path: '~ttd-element/lib/theme-chalk/fonts'; // 
