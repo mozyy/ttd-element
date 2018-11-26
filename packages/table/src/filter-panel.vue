@@ -43,13 +43,13 @@
 </template>
 
 <script type="text/babel">
-  import Popper from 'element-ui/src/utils/vue-popper';
-  import { PopupManager } from 'element-ui/src/utils/popup';
-  import Locale from 'element-ui/src/mixins/locale';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
+  import Popper from 'ttd-element/src/utils/vue-popper';
+  import { PopupManager } from 'ttd-element/src/utils/popup';
+  import Locale from 'ttd-element/src/mixins/locale';
+  import Clickoutside from 'ttd-element/src/utils/clickoutside';
   import Dropdown from './dropdown';
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import ElCheckboxGroup from 'element-ui/packages/checkbox-group';
+  import ElCheckbox from 'ttd-element/packages/checkbox';
+  import ElCheckboxGroup from 'ttd-element/packages/checkbox-group';
 
   export default {
     name: 'ElTableFilterPanel',

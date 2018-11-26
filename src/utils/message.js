@@ -1,4 +1,4 @@
-import { Message, Loading, MessageBox } from 'element-ui';
+import { Message, Loading, MessageBox } from 'ttd-element';
 
 const duration = 1500;
 

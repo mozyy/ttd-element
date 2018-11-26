@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Notification as ElNotificationComponent } from 'element-ui';
+import { Notification as ElNotificationComponent } from 'ttd-element';
 
 import icon from '@/assets/img/logo.png';
 import noticeWav from '@/assets/media/notice.wav';

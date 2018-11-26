@@ -1,4 +1,4 @@
-export * from './element-ui'
+export * from './ttd-element'
 
-import * as ElementUI from './element-ui'
-export default ElementUI
+import * as TtdElement from './ttd-element'
+export default TtdElement

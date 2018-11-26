@@ -17,7 +17,17 @@ function fileExists(filePath) {
 
 themes.forEach((theme) => {
   var isSCSS = theme !== 'theme-default';
-  var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
+  var indexContent = isSCSS ? `
+$--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径
+
+@import "~normalize.css"; // 消除浏览器差异
+@import "./base.scss";
+@import "./style.scss"; // 公共class
+` : `
+@import "~normalize.css"; // 消除浏览器差异
+@import "./base.css";
+@import "./style.css"; // 公共class
+`;
   Components.forEach(function(key) {
     if (['icon', 'option', 'option-group'].indexOf(key) > -1) return;
     var fileName = key + (isSCSS ? '.scss' : '.css');
