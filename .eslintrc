@@ -16,7 +16,7 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true
-    },
+    }
   },
   "parser": "babel-eslint"
 }

@@ -48,7 +48,7 @@ export default {
 
 ## AdminHeader 后台头部
 
-:::demo 
+:::demo info是登录角色的信息
 ```html
 <template>
     <div>
@@ -59,6 +59,9 @@ export default {
 </template>
 
 <script>
+import { Random } from 'mockjs';
+
+
 export default {
     data() {
         return {
@@ -88,7 +91,12 @@ export default {
                     name: '系统管理',
                 },
             ], 
-            defaultActive: '首页'
+            defaultActive: '首页',
+            userInfo: {
+                name: Random.cname(),
+                tel: Random.integer(18381335182, 18381355183),
+                avatar: Random.dataImage('34x34', '头像')
+            }
         }
     }
 }
