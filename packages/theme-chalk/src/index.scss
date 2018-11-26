@@ -7,6 +7,8 @@ $--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径
 @import "./pagination.scss";
 @import "./dialog.scss";
 @import "./autocomplete.scss";
+@import "./admin-header.scss";
+@import "./admin-header-left.scss";
 @import "./dropdown.scss";
 @import "./dropdown-menu.scss";
 @import "./dropdown-item.scss";
@@ -46,6 +48,8 @@ $--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径
 @import "./notification.scss";
 @import "./slider.scss";
 @import "./loading.scss";
+@import "./login-box.scss";
+@import "./login-box-field.scss";
 @import "./row.scss";
 @import "./col.scss";
 @import "./upload.scss";

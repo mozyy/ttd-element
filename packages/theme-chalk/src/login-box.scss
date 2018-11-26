@@ -1,3 +1,28 @@
 @import "mixins/mixins";
-@import "common/var";
-@import "input";
+
+
+@include b(login-box) {
+    padding: 40px 56px 30px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.22);
+    border-radius: 2px;
+
+    @include e(title) {
+        margin: 0 0 30px;
+        font-size: 20px;
+        color: #222222;
+        text-align: center;
+    }
+    .el-input__inner {
+        border-radius: 20px;
+    }
+    .el-input-group__append {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .el-form-item__label {
+        float: initial;
+        line-height: 18px;
+        color: #666666;
+    }
+}

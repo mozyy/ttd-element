@@ -1,0 +1,31 @@
+@import './mixins/mixins.scss';
+@import './common/var.scss';
+
+@include b(admin-header-left) {
+    width: 220px;
+
+    @include e(content) {
+        line-height: 80px;
+    }
+    @include m(avatar) {
+        width: 34px;
+        height: 34px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    @include m(name) {
+        font-size: 14px;
+        color: #FFFFFF;
+    }
+    @include m(drop) {
+        font-size: 17px;
+        color: #222222;
+        font-weight: 700;
+    }
+    @include m(tel) {
+        font-size: 12px;
+        line-height: 18px;
+        color: #999999;
+    }
+}

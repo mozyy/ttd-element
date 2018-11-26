@@ -3,6 +3,8 @@
 import Pagination from '../packages/pagination/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Autocomplete from '../packages/autocomplete/index.js';
+import AdminHeader from '../packages/admin-header/index.js';
+import AdminHeaderLeft from '../packages/admin-header-left/index.js';
 import Dropdown from '../packages/dropdown/index.js';
 import DropdownMenu from '../packages/dropdown-menu/index.js';
 import DropdownItem from '../packages/dropdown-item/index.js';
@@ -44,6 +46,8 @@ import Alert from '../packages/alert/index.js';
 import Notification from '../packages/notification/index.js';
 import Slider from '../packages/slider/index.js';
 import Loading from '../packages/loading/index.js';
+import LoginBox from '../packages/login-box/index.js';
+import LoginBoxField from '../packages/login-box-field/index.js';
 import Icon from '../packages/icon/index.js';
 import Row from '../packages/row/index.js';
 import Col from '../packages/col/index.js';
@@ -76,6 +80,8 @@ const components = [
   Pagination,
   Dialog,
   Autocomplete,
+  AdminHeader,
+  AdminHeaderLeft,
   Dropdown,
   DropdownMenu,
   DropdownItem,
@@ -114,6 +120,8 @@ const components = [
   Tree,
   Alert,
   Slider,
+  LoginBox,
+  LoginBoxField,
   Icon,
   Row,
   Col,
@@ -181,6 +189,8 @@ module.exports = {
   Pagination,
   Dialog,
   Autocomplete,
+  AdminHeader,
+  AdminHeaderLeft,
   Dropdown,
   DropdownMenu,
   DropdownItem,
@@ -221,6 +231,8 @@ module.exports = {
   Alert,
   Notification,
   Slider,
+  LoginBox,
+  LoginBoxField,
   Icon,
   Row,
   Col,

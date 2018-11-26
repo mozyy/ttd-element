@@ -11,6 +11,9 @@ import SideNav from './components/side-nav';
 import FooterNav from './components/footer-nav';
 import title from './i18n/title.json';
 
+import Icon from 'vue-svg-icon/Icon.vue';
+Vue.component('icon', Icon);
+
 Vue.use(Element);
 Vue.use(VueRouter);
 Vue.component('demo-block', demoBlock);
