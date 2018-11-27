@@ -3,6 +3,7 @@
 import Pagination from '../packages/pagination/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Autocomplete from '../packages/autocomplete/index.js';
+import AdminAside from '../packages/admin-aside/index.js';
 import AdminHeader from '../packages/admin-header/index.js';
 import AdminHeaderLeft from '../packages/admin-header-left/index.js';
 import Dropdown from '../packages/dropdown/index.js';
@@ -80,6 +81,7 @@ const components = [
   Pagination,
   Dialog,
   Autocomplete,
+  AdminAside,
   AdminHeader,
   AdminHeaderLeft,
   Dropdown,
@@ -189,6 +191,7 @@ module.exports = {
   Pagination,
   Dialog,
   Autocomplete,
+  AdminAside,
   AdminHeader,
   AdminHeaderLeft,
   Dropdown,

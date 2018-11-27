@@ -1,8 +1,8 @@
-import LoginBox from './src/login-box.vue';
+import TtdLoginBox from './src/login-box.vue';
 
 /* istanbul ignore next */
-LoginBox.install = function(Vue) {
-  Vue.component(LoginBox.name, LoginBox);
+TtdLoginBox.install = function(Vue) {
+  Vue.component(TtdLoginBox.name, TtdLoginBox);
 };
 
-export default LoginBox;
+export default TtdLoginBox;

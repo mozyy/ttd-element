@@ -1,8 +1,8 @@
-import ElAdminHeaderLeft from '../admin-header/src/admin-header-left.vue';
+import TtdAdminHeaderLeft from '../admin-header/src/admin-header-left.vue';
 
 /* istanbul ignore next */
-ElAdminHeaderLeft.install = function(Vue) {
-  Vue.component(ElAdminHeaderLeft.name, ElAdminHeaderLeft);
+TtdAdminHeaderLeft.install = function(Vue) {
+  Vue.component(TtdAdminHeaderLeft.name, TtdAdminHeaderLeft);
 };
 
-export default ElAdminHeaderLeft;
+export default TtdAdminHeaderLeft;

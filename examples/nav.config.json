@@ -260,6 +260,10 @@
             {
               "path": "/admin-header",
               "title": "AdminHeader 后台头部"
+            },
+            {
+              "path": "/admin-aside",
+              "title": "AdminAside 后台侧边"
             }
           ]
         }

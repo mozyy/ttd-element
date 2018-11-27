@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'ElAdminHeader',
+  name: 'TtdAdminHeader',
 
   props: {
     navigate: {

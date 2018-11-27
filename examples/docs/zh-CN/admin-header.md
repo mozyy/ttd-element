@@ -52,9 +52,9 @@ export default {
 ```html
 <template>
     <div>
-        <el-admin-header :navigate="navigate" :default-active="defaultActive">
-            <el-admin-header-left :info="userInfo"></el-admin-header-left>
-        </el-admin-header>
+        <ttd-admin-header :navigate="navigate" :default-active="defaultActive">
+            <ttd-admin-header-left :info="userInfo"/>
+        </ttd-admin-header>
     </div>
 </template>
 

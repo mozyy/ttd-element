@@ -28,7 +28,7 @@ export default {
 ```html
 <template>
     <div class="login-demo">
-        <el-login-box title="欢迎登录妥妥递存证保全系统">
+        <ttd-login-box title="欢迎登录妥妥递存证保全系统">
             <el-form ref="form" :model="form" label-width="0">
                 <el-form-item label="后台账号">
                     <el-input v-model="form.name" placeholder="请输入后台账号"></el-input>
@@ -46,7 +46,7 @@ export default {
                     <span>忘记密码</span>
                 </el-form-item>
                 </el-form>
-        </el-login-box>
+        </ttd-login-box>
     </div>
 </template>
 

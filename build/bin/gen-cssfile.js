@@ -34,7 +34,7 @@ $--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径
     indexContent += '@import "./' + fileName + '";\n';
     var filePath = path.resolve(basepath, theme, 'src', fileName);
     if (!fileExists(filePath)) {
-      fs.writeFileSync(filePath, '', 'utf8');
+      fs.writeFileSync(filePath, '@import "./mixins/mixins.scss";\n@import "./common/var.scss";\n', 'utf8');
       console.log(theme, ' 创建遗漏的 ', fileName, ' 文件');
     }
   });

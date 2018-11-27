@@ -1,0 +1,20 @@
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+
+@include b(admin-aside) {
+    @include e(menu) {
+        &.el-menu {
+            border-right: none;
+        }
+    }
+    @include m(item) {
+        &.el-menu-item {
+            height: 40px;
+            line-height: 40px;
+            border-radius: 28px;
+        }
+    }
+    @include m(icon) {
+        font-size: 16px;
+    }
+}
