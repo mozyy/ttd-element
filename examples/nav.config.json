@@ -276,6 +276,10 @@
             {
               "path": "/scroll",
               "title": "Scroll 滚动条盒子"
+            },
+            {
+              "path": "/table",
+              "title": "Table 后台表格"
             }
           ]
         }

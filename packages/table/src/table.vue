@@ -238,10 +238,7 @@
 
     props: {
       data: {
-        type: Array,
-        default: function() {
-          return [];
-        }
+        type: Array
       },
 
       size: String,

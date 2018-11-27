@@ -1,8 +1,8 @@
-import TtdScroll from './src/scroll.vue';
+import TtdSearch from './src/search.vue';
 
 /* istanbul ignore next */
-TtdScroll.install = function(Vue) {
-  Vue.component(TtdScroll.name, TtdScroll);
+TtdSearch.install = function(Vue) {
+  Vue.component(TtdSearch.name, TtdSearch);
 };
 
-export default TtdScroll;
+export default TtdSearch;

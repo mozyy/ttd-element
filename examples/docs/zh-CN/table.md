@@ -409,6 +409,34 @@
 
 用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。
 
+### 后台表格
+
+:::demo
+```html
+<template>
+  <ttd-table
+    :data="tableData"
+    width="500"
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </ttd-table>
+</template>
+```
+:::
+
 ### 基础表格
 
 基础的表格展示用法。

@@ -38,7 +38,7 @@
       };
       return {
         search: {
-          name: '',
+          name: '1',
           org: '',
           date: '',
         },

@@ -1,0 +1,15 @@
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+
+@include b(ttd-table) {
+  &.el-table {
+    color: #222;
+    font-size: 13px;
+    th {
+      background: #F4F7FD;
+    }
+    thead {
+      color: #272D38;
+    }
+  }
+}
