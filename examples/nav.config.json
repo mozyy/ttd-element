@@ -264,6 +264,10 @@
             {
               "path": "/admin-aside",
               "title": "AdminAside 后台侧边"
+            },
+            {
+              "path": "/title",
+              "title": "Title 后台标题栏"
             }
           ]
         }

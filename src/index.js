@@ -42,6 +42,7 @@ import FormItem from '../packages/form-item/index.js';
 import Tabs from '../packages/tabs/index.js';
 import TabPane from '../packages/tab-pane/index.js';
 import Tag from '../packages/tag/index.js';
+import Title from '../packages/title/index.js';
 import Tree from '../packages/tree/index.js';
 import Alert from '../packages/alert/index.js';
 import Notification from '../packages/notification/index.js';
@@ -119,6 +120,7 @@ const components = [
   Tabs,
   TabPane,
   Tag,
+  Title,
   Tree,
   Alert,
   Slider,
@@ -230,6 +232,7 @@ module.exports = {
   Tabs,
   TabPane,
   Tag,
+  Title,
   Tree,
   Alert,
   Notification,

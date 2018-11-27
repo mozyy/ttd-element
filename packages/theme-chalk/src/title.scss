@@ -1,0 +1,33 @@
+@import "mixins/mixins";
+
+@include b(title) {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 2px solid #d8d8d8;
+    
+    @include e(back) {
+        padding: 0 16px;
+        height: 40px;
+        border-right: 1px solid #d8d8d8;
+        font-size: 18px;
+        font-weight: 700;
+        color: #ccc;
+        line-height: 40px;
+        cursor: pointer;
+    }
+
+    @include e(title) {
+        margin: 0 10px 0 18px;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 700;
+        color: #666666;
+    }
+
+    @include e(sub) {
+        display: inline-block;
+    }
+    @include e(right) {
+        float: right;
+    }
+}

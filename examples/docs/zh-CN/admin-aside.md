@@ -25,7 +25,8 @@ export default {
                     index: '3',
                     name: '存证数据'
                 },
-            ]
+            ],
+            defaultActive: '2'
         }
     }
 }
@@ -33,13 +34,40 @@ export default {
 
 ## AdminAside 后台侧边菜单
 
-:::demo
+:::demo 
 
 ```html
 <template>
     <div class="admin-aside-demo">
-        <ttd-admin-aside :menu="menu"/>
+        <ttd-admin-aside :menu="menu" :default-active="defaultActive"/>
     <div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            menu: [
+                {
+                    icon: 'home',
+                    index: '1',
+                    name: '模板数据'
+                },
+                {
+                    icon: 'home',
+                    index: '2',
+                    name: '标签管理'
+                },
+                {
+                    icon: 'home',
+                    index: '3',
+                    name: '存证数据'
+                },
+            ],
+            defaultActive: '2'
+        }
+    }
+}
+</script>
 ```
 :::
