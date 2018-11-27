@@ -4,19 +4,41 @@
 
 推荐使用 npm 的方式安装，它能更好地和 [webpack](https://webpack.js.org/) 打包工具配合使用。
 
-```shell
-npm i element-ui -S
+在package.json的dependencies字段里里手动加上`"ttd-element": "mozyy/ttd-element",`
+
+```json
+"dependencies": {
+    "axios": "^0.18.0",
+    "qs": "^6.5.2",
+    "ttd-element": "mozyy/ttd-element",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+```
+
+**正常使用，还需在vue.config.js中加个alias:`'element-ui': 'ttd-element'`**
+```javascript
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'element-ui': 'ttd-element',
+      },
+    },
+  },
+};
 ```
 
 ### CDN
 
-目前可以通过 [unpkg.com/element-ui](https://unpkg.com/element-ui/) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+目前可以通过 [ele.moz0.com/](https://ele.moz0.com/) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="https://ele.moz0.com/index.css">
 <!-- 引入组件库 -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://ele.moz0.com/index.js"></script>
 ```
 
 :::tip

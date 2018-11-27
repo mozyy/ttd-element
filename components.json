@@ -59,6 +59,8 @@
   "badge": "./packages/badge/index.js",
   "card": "./packages/card/index.js",
   "rate": "./packages/rate/index.js",
+  "scroll": "./packages/scroll/index.js",
+  "search": "./packages/search/index.js",
   "steps": "./packages/steps/index.js",
   "step": "./packages/step/index.js",
   "carousel": "./packages/carousel/index.js",

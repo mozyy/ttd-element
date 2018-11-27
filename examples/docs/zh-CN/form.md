@@ -37,6 +37,11 @@
         }
       };
       return {
+        search: {
+          name: '',
+          org: '',
+          date: '',
+        },
         form: {
           name: '',
           region: '',
@@ -241,6 +246,32 @@
 ## Form 表单
 
 由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据
+
+### Search 搜索表单
+
+由Form 表单再次封装
+
+:::demo 
+```html
+  <ttd-search class="demo-form-inline" :model="search">
+    <el-form-item>
+      <el-input v-model="search.name" placeholder="请输入标签名称或编码"></el-input>
+    </el-form-item>
+    <el-form-item>
+      <el-select v-model="search.org" placeholder="请选择机构">
+        <el-option label="机构一" value="1"></el-option>
+        <el-option label="机构二" value="2"></el-option>
+      </el-select>
+    </el-form-item>
+    <el-form-item>
+      <el-date-picker placeholder="选择日期" v-model="search.date" style="width: 100%;"></el-date-picker>
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="onSubmit" round>搜索</el-button>
+    </el-form-item>
+  </ttd-search>
+```
+:::
 
 ### 典型表单
 

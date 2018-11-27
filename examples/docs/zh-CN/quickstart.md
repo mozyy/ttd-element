@@ -12,9 +12,9 @@
 
 如果不希望使用我们提供的模板，请继续阅读。
 
-### 引入 Element
+### 引入 TtdElement
 
-你可以引入整个 Element，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 Element。
+你可以引入整个 TtdElement，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 TtdElement。
 
 #### 完整引入
 
@@ -22,11 +22,11 @@
 
 ```javascript
 import Vue from 'vue';
-import ElementUI from 'ttd-element';
+import TtdElement from 'ttd-element';
 import 'ttd-element/lib/theme-chalk/index.css';
 import App from './App.vue';
 
-Vue.use(ElementUI);
+Vue.use(TtdElement);
 
 new Vue({
   el: '#app',
@@ -34,7 +34,7 @@ new Vue({
 });
 ```
 
-以上代码便完成了 Element 的引入。需要注意的是，样式文件需要单独引入。
+以上代码便完成了 TtdElement 的引入。需要注意的是，样式文件需要单独引入。
 
 #### 按需引入
 
@@ -240,11 +240,11 @@ Vue.prototype.$message = Message;
 
 ```js
 import Vue from 'vue';
-import Element from 'ttd-element';
-Vue.use(Element, { size: 'small', zIndex: 3000 });
+import TtdElement from 'ttd-element';
+Vue.use(TtdElement, { size: 'small', zIndex: 3000 });
 ```
 
-按需引入 Element：
+按需引入 TtdElement：
 
 ```js
 import Vue from 'vue';

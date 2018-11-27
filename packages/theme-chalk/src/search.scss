@@ -1,0 +1,34 @@
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+
+@include b(search) {
+  
+ 
+  .el-input__inner {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0;
+  }
+  .el-select {
+    .el-input__inner{
+      border: none;
+      &::-webkit-input-placeholder {
+        color: #000;
+      }
+      &:-moz-placeholder {
+        color: #000;
+      }
+      &::-moz-placeholder {
+        color: #000;
+      }
+      &:-ms-input-placeholder {
+        color: #000;
+      }
+    }
+    .el-select__caret {
+      color: #222;
+    }
+  }
+}
