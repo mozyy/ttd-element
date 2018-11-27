@@ -35,7 +35,7 @@ export default {
                     name: '系统管理',
                 },
             ], 
-            defaultActive: '首页',
+            defaultActive: '模板管理',
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -91,7 +91,7 @@ export default {
                     name: '系统管理',
                 },
             ], 
-            defaultActive: '首页',
+            defaultActive: '模板管理',
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),

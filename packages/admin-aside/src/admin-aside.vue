@@ -1,8 +1,9 @@
 <template>
   <div class="el-admin-aside">
     <el-menu
-      :default-active="'123'"
+      :default-active="defaultActive"
       class="el-admin-aside__menu"
+      text-color="#999"
     >
       <el-menu-item 
         v-for="item in menu" 
@@ -24,12 +25,12 @@ export default {
     menu: {
       type: Array,
       required: true
-    }
+    },
+    defaultActive: String
   },
 
   data() {
     return {
-      active: ''
     };
   },
 

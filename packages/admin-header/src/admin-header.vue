@@ -35,7 +35,7 @@ export default {
 
   data() {
     return {
-      active: ''
+      active: this.navigate[0].name
     };
   },
 

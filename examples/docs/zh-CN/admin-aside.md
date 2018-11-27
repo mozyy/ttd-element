@@ -1,5 +1,6 @@
 <style>
 .admin-aside-demo {
+    padding: 10px;
     width: 200px;
 }
 </style>
@@ -11,9 +12,19 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    index: '123',
-                    name: '首页'
-                }
+                    index: '1',
+                    name: '模板数据'
+                },
+                {
+                    icon: 'home',
+                    index: '2',
+                    name: '标签管理'
+                },
+                {
+                    icon: 'home',
+                    index: '3',
+                    name: '存证数据'
+                },
             ]
         }
     }
