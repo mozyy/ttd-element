@@ -20,7 +20,9 @@
           address: '上海市普陀区金沙江路 1518 弄'
         }],
         dialogVisible: false,
+        rightPopVisible: false,
         dialogTableVisible: false,
+        dialogTtdVisible: false,
         dialogFormVisible: false,
         outerVisible: false,
         innerVisible: false,
@@ -34,6 +36,15 @@
           type: [],
           resource: '',
           desc: ''
+        },
+        popForm: {
+          name: '',
+          org: '',
+          app: '',
+        },
+        ttdForm: {
+          title: '',
+          number: '',
         },
         formLabelWidth: '80px'
       };
@@ -61,11 +72,13 @@
     .el-dialog__wrapper {
       margin: 0;
     }
-    .el-select {
-      width: 300px;
-    }
-    .el-input {
-      width: 300px;
+    .form-demo {
+      .el-select {
+        width: 300px;
+      }
+      .el-input {
+        width: 300px;
+      }
     }
     .el-button--text {
       margin-right: 15px;
@@ -74,6 +87,67 @@
 </style>
 ## Dialog 对话框
 在保留当前页面状态的情况下，告知用户并承载相关操作。
+
+### 常用对话框
+
+后台常用对话框
+
+:::demo 
+
+```html
+<el-button type="text" @click="dialogTtdVisible = true">点击打开 Dialog</el-button>
+
+<ttd-dialog
+  title="编辑取证"
+  :visible.sync="dialogTtdVisible">
+  <el-form :model="ttdForm" size="small">
+    <el-form-item label="申请标题">
+      <el-input v-model="ttdForm.title"></el-input>
+    </el-form-item>
+    <el-form-item label="存单号">
+      <el-input type="textarea" v-model="ttdForm.number"></el-input>
+    </el-form-item>
+  </el-form>
+  <span slot="footer">
+    <el-button @click="dialogTtdVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogTtdVisible = false">确 定</el-button>
+  </span>
+</ttd-dialog>
+
+```
+:::
+
+### 右侧弹出对话框
+
+:::demo
+```html
+<el-button type="text" @click="rightPopVisible = true">点击打开 Dialog</el-button>
+
+<ttd-right-pop :visible.sync="rightPopVisible" title="新建模板">
+  <el-form :model="form">
+    <el-form-item label="模板名称" required>
+      <el-input v-model="form.name" placeholder="请输入模板名称"></el-input>
+    </el-form-item>
+    <el-form-item label="从属机构" required>
+      <el-select v-model="form.org" placeholder="请选择机构">
+        <el-option label="机构一" value="1"></el-option>
+        <el-option label="机构二" value="2"></el-option>
+      </el-select>
+    </el-form-item>
+    <el-form-item label="从属应用" required>
+      <el-select v-model="form.app" placeholder="请选择应用">
+        <el-option label="应用一" value="1"></el-option>
+        <el-option label="应用二" value="2"></el-option>
+      </el-select>
+    </el-form-item>
+  </el-form>
+  <span slot="footer">
+    <el-button @click="rightPopVisible = false" round>取 消</el-button>
+    <el-button type="primary" @click="rightPopVisible = false" round>确 定</el-button>
+  </span>
+</ttd-right-pop>
+```
+:::
 
 ### 基本用法
 
@@ -141,7 +215,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 <!-- Form -->
 <el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
 
-<el-dialog title="收货地址" :visible.sync="dialogFormVisible">
+<el-dialog class="form-demo" title="收货地址" :visible.sync="dialogFormVisible">
   <el-form :model="form">
     <el-form-item label="活动名称" :label-width="formLabelWidth">
       <el-input v-model="form.name" autocomplete="off"></el-input>

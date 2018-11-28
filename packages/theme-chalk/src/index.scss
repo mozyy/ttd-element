@@ -5,7 +5,10 @@ $--font-path: "~ttd-element/lib/theme-chalk/fonts"; //字体路径
 @import "./base.scss";
 @import "./style.scss"; // 公共class
 @import "./pagination.scss";
+@import "./ttd-pagination.scss";
+@import "./right-pop.scss";
 @import "./dialog.scss";
+@import "./ttd-dialog.scss";
 @import "./autocomplete.scss";
 @import "./admin-aside.scss";
 @import "./admin-header.scss";

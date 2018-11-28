@@ -1,0 +1,78 @@
+@import "mixins/mixins";
+
+@include b(right-pop) {
+  .el-dialog {
+    margin: 0 0 0 auto;
+    border-radius: 0;
+    height: 100%;
+    max-width:600px;
+    overflow: hidden;
+    // box-shadow: 0 0 14px 0 #ddd;
+  }
+  .el-dialog__header {
+    padding: 0;
+  }
+  .el-dialog__body {
+    padding: 13px 20px;
+    overflow: auto;
+    position: absolute;
+    top: 62px;
+    bottom: 72px;
+    left: 0;
+    right: 0;
+  }
+  .el-dialog__footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F5F5F5;
+  }
+  .title-right {
+    font-size: 30px;
+    color: #979797;
+    cursor: pointer;
+  }
+  .el-form-item__label {
+    font-size: 13px;
+    color: #3F3F3F;
+    line-height: 24px;
+  }
+  .el-input, .el-select {
+    width: 100%;
+  }
+
+  &.dialog-fade-enter-active{
+    animation: right-pop-fade-right-in .3s
+  }
+  &.dialog-fade-leave-active{
+    animation: right-pop-fade-right-out .8s
+  }
+  &.close-animate{
+    &.dialog-fade-enter-active,&.dialog-fade-leave-active {
+      animation:none;
+    }
+  }
+}
+
+@keyframes right-pop-fade-right-in {
+  0% {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+ }
+
+ @keyframes right-pop-fade-right-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+}

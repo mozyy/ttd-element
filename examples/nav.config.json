@@ -270,7 +270,7 @@
               "title": "Title 后台标题栏"
             },
             {
-              "path": "/form",
+              "path": "/form#search-sou-suo-biao-dan",
               "title": "Search 后台搜索框"
             },
             {
@@ -278,8 +278,20 @@
               "title": "Scroll 滚动条盒子"
             },
             {
-              "path": "/table",
+              "path": "/table#hou-tai-biao-ge",
               "title": "Table 后台表格"
+            },
+            {
+              "path": "/pagination#hou-tai-fen-ye",
+              "title": "Pagination 后台分页"
+            },
+            {
+              "path": "/dialog#you-ce-dan-chu-dui-hua-kuang",
+              "title": "RightPop 右侧弹出层"
+            },
+            {
+              "path": "/dialog",
+              "title": "TtdDialog 中间弹出层"
             }
           ]
         }

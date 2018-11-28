@@ -1,0 +1,16 @@
+@import "mixins/mixins";
+
+@include b(ttd-dialog) {
+  
+  .el-dialog__footer{
+    background: #F5F5F5;
+  }
+  .el-form-item__label {
+    font-size: 13px;
+    color: #3F3F3F;
+    line-height: 24px;
+  }
+  .el-input, .el-select {
+    width: 100%;
+  }
+}

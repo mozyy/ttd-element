@@ -8,6 +8,7 @@
         line-height: 80px;
     }
     @include m(avatar) {
+        margin: 0 10px 0 20px;
         width: 34px;
         height: 34px;
         border: 1px solid #fff;
