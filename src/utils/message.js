@@ -1,4 +1,6 @@
-import { Message, Loading, MessageBox } from 'ttd-element';
+import Message from 'ttd-element/packages/message';
+import Loading from 'ttd-element/packages/loading';
+import MessageBox from 'ttd-element/packages/message-box';
 
 const duration = 1500;
 
@@ -15,6 +17,12 @@ export const successMessage = message => messageHandler('success')(message);
  * @param {string} message
  */
 export const errorMessage = message => messageHandler('error')(message);
+
+/**
+ * 错误消息
+ * @param {string} message
+ */
+export const warnMessage = message => messageHandler('warning')(message);
 
 let loadingInstance = { close() {} }; // 加个close函数, 保证调用时不报错
 

@@ -292,6 +292,10 @@
             {
               "path": "/dialog",
               "title": "TtdDialog 中间弹出层"
+            },
+            {
+              "path": "/pdf-label",
+              "title": "PdfLabel pdf标签"
             }
           ]
         }
