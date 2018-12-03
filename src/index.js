@@ -85,6 +85,7 @@ import Main from '../packages/main/index.js';
 import Footer from '../packages/footer/index.js';
 import locale from 'ttd-element/src/locale';
 import CollapseTransition from 'ttd-element/src/transitions/collapse-transition';
+import IconSvg from 'vue-svg-icon/Icon.vue';
 
 const components = [
   Pagination,
@@ -176,6 +177,7 @@ const install = function(Vue, opts = {}) {
   components.forEach(component => {
     Vue.component(component.name, component);
   });
+  Vue.component('icon', IconSvg);
 
   Vue.use(Loading.directive);
 
