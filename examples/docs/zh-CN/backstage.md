@@ -108,6 +108,8 @@ export default {
 </template>
 
 <script>
+import { Random } from 'mockjs';
+
 export default {
     data() {
         return {
@@ -128,7 +130,63 @@ export default {
                     name: '存证数据'
                 },
             ],
-            defaultActive: '2'
+            defaultMenu: '2',
+            navigate: [
+                {
+                    icon: 'home',
+                    name: '首页',
+                },
+                {
+                    icon: 'template',
+                    name: '模板管理',
+                },
+                {
+                    icon: 'evidence',
+                    name: '存证数据',
+                },
+                {
+                    icon: 'apply',
+                    name: '取证申请',
+                },
+                {
+                    icon: 'statistics',
+                    name: '数据统计',
+                },
+                {
+                    icon: 'manage',
+                    name: '系统管理',
+                },
+            ], 
+            defaultNavigate: '模板管理',
+            userInfo: {
+                name: Random.cname(),
+                tel: Random.integer(18381335182, 18381355183),
+                avatar: Random.dataImage('34x34', '头像'),
+                menu: [
+                    {
+                        icon: 'people',
+                        name: '个人中心',
+                        handler() {
+                            console.log('个人中心')
+                        }
+                    },
+                    {
+                        icon: 'back',
+                        name: '退出',
+                        handler() {
+                            console.log('退出')
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    methods: {
+        navigateChangeHandler(navigate) {
+            this.$log('导航',navigate)
+        },
+        menuChangeHandler(menu) {
+            this.$log('菜单',menu)            
         }
     }
 }

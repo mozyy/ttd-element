@@ -5,7 +5,7 @@
   height: 100%;
   background-color: #e6e9ee;
 
-  .el-header {
+  .el-header,.el-main {
     padding: 0;
   }
   @include e(container) {
