@@ -1,0 +1,25 @@
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+
+@include b(backstage) {
+  height: 100%;
+  background-color: #e6e9ee;
+
+  .el-header {
+    padding: 0;
+  }
+  @include e(container) {
+    margin: 20px 20px 50px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+    overflow: hidden;
+  }
+  @include e(aside) {
+    padding: 16px 8px;
+    border-right: 2px solid #DDDDDD;
+    background-color: #fff;
+  }
+  @include e(main) {
+    background-color: #fff;    
+  }
+}

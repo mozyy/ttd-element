@@ -1,6 +1,7 @@
 {
   "pagination": "./packages/pagination/index.js",
   "ttd-pagination": "./packages/ttd-pagination/index.js",
+  "backstage": "./packages/backstage/index.js",
   "right-pop": "./packages/right-pop/index.js",
   "dialog": "./packages/dialog/index.js",
   "ttd-dialog": "./packages/ttd-dialog/index.js",

@@ -296,6 +296,10 @@
             {
               "path": "/pdf-label",
               "title": "PdfLabel pdf标签"
+            },
+            {
+              "path": "/backstage",
+              "title": "Backstage 后台界面"
             }
           ]
         }

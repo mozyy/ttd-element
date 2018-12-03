@@ -26,7 +26,12 @@ export default {
                     name: '存证数据'
                 },
             ],
-            defaultActive: '2'
+            defaultActive: '2',
+        }
+    },
+    methods: {
+        changeHandler(menu) {
+            this.$log(menu)
         }
     }
 }
@@ -39,7 +44,7 @@ export default {
 ```html
 <template>
     <div class="admin-aside-demo">
-        <ttd-admin-aside :menu="menu" :default-active="defaultActive"/>
+        <ttd-admin-aside :menu="menu" :default-active="defaultActive" :change-handler="changeHandler"/>
     <div>
 </template>
 

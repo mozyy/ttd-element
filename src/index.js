@@ -2,6 +2,7 @@
 
 import Pagination from '../packages/pagination/index.js';
 import TtdPagination from '../packages/ttd-pagination/index.js';
+import Backstage from '../packages/backstage/index.js';
 import RightPop from '../packages/right-pop/index.js';
 import Dialog from '../packages/dialog/index.js';
 import TtdDialog from '../packages/ttd-dialog/index.js';
@@ -90,6 +91,7 @@ import IconSvg from 'vue-svg-icon/Icon.vue';
 const components = [
   Pagination,
   TtdPagination,
+  Backstage,
   RightPop,
   Dialog,
   TtdDialog,
@@ -210,6 +212,7 @@ module.exports = {
   Loading,
   Pagination,
   TtdPagination,
+  Backstage,
   RightPop,
   Dialog,
   TtdDialog,

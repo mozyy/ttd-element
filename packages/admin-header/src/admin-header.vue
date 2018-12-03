@@ -30,7 +30,11 @@ export default {
       type: Array,
       required: true
     },
-    defaultActive: String
+    defaultActive: String,
+    changeHandler: {
+      type: Function,
+      required: true
+    }
   },
 
   data() {
@@ -40,7 +44,8 @@ export default {
   },
 
   watch: {
-    defaultActive: 'setDefaultActive'
+    defaultActive: 'setDefaultActive',
+    active: 'changeHandler'
   },
 
   created() {
@@ -50,7 +55,6 @@ export default {
   methods: {
     clickHandler(item) {
       this.active = item.name;
-      this.$emit('click', item);
     },
     setDefaultActive() {
       const value = this.defaultActive;

@@ -15,7 +15,7 @@
                 <p class="el-admin-header-left--drop">{{ info.name }}</p>
                 <p class="el-admin-header-left--tel">{{ info.tel }}</p>
             </el-dropdown-item>
-            <el-dropdown-item v-for="item in info.menu" :key="item.name">
+            <el-dropdown-item v-for="(item,index) in info.menu" :key="item.name" :command="index">
                 <icon :name="item.icon"></icon> <span>{{item.name}}</span>
             </el-dropdown-item>
         </el-dropdown-menu>
@@ -49,9 +49,11 @@ export default {
   },
 
   methods: {
-    toUserCenter() {
-    },
     dropdown(command) {
+      const handler = this.info.menu[command].handler;
+      if (typeof handler === 'function') {
+        handler();
+      }
     }
   }
 };

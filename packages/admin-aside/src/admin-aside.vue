@@ -4,6 +4,7 @@
       :default-active="defaultActive"
       class="el-admin-aside__menu"
       text-color="#999"
+      @select="changeHandler"
     >
       <el-menu-item 
         v-for="item in menu" 
@@ -26,7 +27,11 @@ export default {
       type: Array,
       required: true
     },
-    defaultActive: String
+    defaultActive: String,
+    changeHandler: {
+      type: Function,
+      required: true
+    }
   },
 
   data() {

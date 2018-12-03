@@ -39,8 +39,29 @@ export default {
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
-                avatar: Random.dataImage('34x34', '头像')
+                avatar: Random.dataImage('34x34', '头像'),
+                menu: [
+                    {
+                        icon: 'people',
+                        name: '个人中心',
+                        handler() {
+                            console.log('个人中心')
+                        }
+                    },
+                    {
+                        icon: 'back',
+                        name: '退出',
+                        handler() {
+                            console.log('退出')
+                        }
+                    }
+                ]
             }
+        }
+    },
+    methods: {
+        changeHandler(navigate) {
+            this.$log(navigate)
         }
     }
 }
@@ -52,7 +73,7 @@ export default {
 ```html
 <template>
     <div>
-        <ttd-admin-header :navigate="navigate" :default-active="defaultActive">
+        <ttd-admin-header :navigate="navigate" :default-active="defaultActive" :change-handler="changeHandler">
             <ttd-admin-header-left :info="userInfo"/>
         </ttd-admin-header>
     </div>
