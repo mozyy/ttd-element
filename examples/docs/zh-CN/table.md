@@ -415,9 +415,7 @@
 ```html
 <template>
   <ttd-table
-    :data="tableData"
-    width="500"
-    style="width: 100%">
+    :data="tableData">
     <el-table-column
       prop="date"
       label="日期"
@@ -431,6 +429,12 @@
     <el-table-column
       prop="address"
       label="地址">
+    </el-table-column>
+    <el-table-column
+      label="操作">
+      <span slot-scope="scope">
+        <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+      </span>
     </el-table-column>
   </ttd-table>
 </template>

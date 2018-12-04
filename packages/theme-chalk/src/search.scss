@@ -2,7 +2,10 @@
 @import "./common/var.scss";
 
 @include b(search) {
-  
+  margin-top: 20px;
+  .el-form-item--small.el-form-item {
+    margin-bottom: 12px;
+  }
   .el-input__inner {
     border-top: none;
     border-left: none;
