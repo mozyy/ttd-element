@@ -8,9 +8,19 @@
 ```html
 <template>
   <div class="block" style="width:100%;text-align:initial">
-    <ttd-pagination :total="1000" />
+    <ttd-pagination :total="1000" @change="paginationChange"/>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    paginationChange(page) {
+      console.log(page)
+    }
+  }
+}
+</script>
 ```
 :::
 
@@ -160,6 +170,9 @@
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+      paginationChange(page) {
+        console.log(page)
       }
     },
     data() {
