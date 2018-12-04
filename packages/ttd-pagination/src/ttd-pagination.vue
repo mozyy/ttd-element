@@ -18,17 +18,17 @@
     methods: {
       emitChange() {
         this.$nextTick(()=> {
-          this.getParams();
+          const page = this.getPage();
+          this.$emit('change', page);
         });
-  
       },
-      getParams() {
+      getPage() {
         const {internalCurrentPage, internalPageSize} = this.$refs.pagination;
-        const params = {
+        const page = {
           page: internalCurrentPage,
           size: internalPageSize
         };
-        this.$emit('change', params);
+        return page;
       }
     }
   };

@@ -4,11 +4,12 @@
 
 ### 后台分页
 
-:::demo
+:::demo 页码和size改变会解发change事件，change事件有两个返回`{page:1,size:10}`,获取当前页码和size用`getPage()`方法
 ```html
 <template>
+  <el-button @click="getTtdPage">获取页码</el-button>
   <div class="block" style="width:100%;text-align:initial">
-    <ttd-pagination :total="1000" @change="paginationChange"/>
+    <ttd-pagination :total="1000" @change="paginationChange" ref="ttdPagination"/>
   </div>
 </template>
 
@@ -16,6 +17,10 @@
 export default {
   methods: {
     paginationChange(page) {
+      console.log(page)
+    },
+    getTtdPage() {
+      const page = this.$refs.ttdPagination.getPage()
       console.log(page)
     }
   }
@@ -172,6 +177,10 @@ export default {
         console.log(`当前页: ${val}`);
       },
       paginationChange(page) {
+        console.log(page)
+      },
+      getTtdPage() {
+        const page = this.$refs.ttdPagination.getPage()
         console.log(page)
       }
     },
