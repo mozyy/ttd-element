@@ -1,8 +1,8 @@
 <template>
-  <div class="el-pdf-label__item" :style="style" :class="{'is-active':active}">
+  <div class="el-pdf-label-item" :style="style" :class="{'is-active':active}">
     {{label.name}}
     <div class="el-pdf-label__drag" ref="drag"></div>
-    <i @click="deleteLabel" class="el-icon-circle-close el-pdf-label__item--close"></i>
+    <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label__item--close"></i>
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
       type: Object,
       required: true
     },
-    active: Boolean
+    active: Boolean,
+    pure: Boolean
   },
 
   data() {
@@ -40,16 +41,18 @@ export default {
   },
 
   mounted() {
-    draggable(this.$el, {
-      start: this.generateDragStart('box'),
-      drag: this.generateDrag('box'),
-      end: this.generateDrag('box')
-    });
-    draggable(this.$refs.drag, {
-      start: this.generateDragStart('scale'),
-      drag: this.generateDrag('scale'),
-      end: this.generateDrag('scale')
-    });
+    if (!this.pure) {
+      draggable(this.$el, {
+        start: this.generateDragStart('box'),
+        drag: this.generateDrag('box'),
+        end: this.generateDrag('box')
+      });
+      draggable(this.$refs.drag, {
+        start: this.generateDragStart('scale'),
+        drag: this.generateDrag('scale'),
+        end: this.generateDrag('scale')
+      });
+    }
   },
 
   methods: {

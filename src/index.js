@@ -40,6 +40,7 @@ import TimePicker from '../packages/time-picker/index.js';
 import Popover from '../packages/popover/index.js';
 import Pdf from '../packages/pdf/index.js';
 import PdfLabel from '../packages/pdf-label/index.js';
+import PdfLabelItem from '../packages/pdf-label-item/index.js';
 import Tooltip from '../packages/tooltip/index.js';
 import MessageBox from '../packages/message-box/index.js';
 import Breadcrumb from '../packages/breadcrumb/index.js';
@@ -129,6 +130,7 @@ const components = [
   Popover,
   Pdf,
   PdfLabel,
+  PdfLabelItem,
   Tooltip,
   Breadcrumb,
   BreadcrumbItem,
@@ -250,6 +252,7 @@ module.exports = {
   Popover,
   Pdf,
   PdfLabel,
+  PdfLabelItem,
   Tooltip,
   MessageBox,
   Breadcrumb,

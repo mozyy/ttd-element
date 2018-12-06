@@ -1,3 +1,4 @@
+import { isDevEnv } from '../env';
 
 export default class Logger {
   constructor(type = 'log', color = 'red', visible = true) {
@@ -7,7 +8,7 @@ export default class Logger {
     return this.log.bind(this);
   }
   log(...msgs) {
-    if (this.visibleLog) {
+    if (isDevEnv && this.visibleLog) {
       console.log(`%c [[${this.type}]]:`, `background:${this.color};color:#fff`, ...msgs);
     }
   }

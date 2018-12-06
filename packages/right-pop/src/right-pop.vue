@@ -1,11 +1,11 @@
 <template>
-  <el-dialog 
-    class="el-right-pop" 
-    v-bind="$attrs" 
-    @update:visible="$emit('update:visible', $event)" 
+  <el-dialog
+    class="el-right-pop"
+    v-bind="$attrs"
+    @update:visible="$emit('update:visible', $event)"
     :close-on-press-escape="false"
-    :show-close="false" 
-    width="30%" 
+    :show-close="false"
+    width="30%"
     top="0">
     <ttd-title :title="$attrs.title || '提示'" slot="title">
       <div class="title-right" slot="right">

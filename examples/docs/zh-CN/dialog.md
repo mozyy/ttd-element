@@ -146,6 +146,17 @@
     <el-button type="primary" @click="rightPopVisible = false" round>确 定</el-button>
   </span>
 </ttd-right-pop>
+
+<script>
+export default {
+  data() {
+    return {
+      rightPopVisible: false,
+      form: {}
+    }
+  }
+}
+</script>
 ```
 :::
 

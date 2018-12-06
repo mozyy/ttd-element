@@ -12,14 +12,9 @@
 </template>
 
 <script>
-import TtdPdfLabelItem from './components/pdf-label-item.vue';
 
 export default {
   name: 'TtdPdfLabel',
-
-  components: {
-    TtdPdfLabelItem
-  },
 
   props: {
     src: {

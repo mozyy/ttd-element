@@ -39,6 +39,7 @@
   "popover": "./packages/popover/index.js",
   "pdf": "./packages/pdf/index.js",
   "pdf-label": "./packages/pdf-label/index.js",
+  "pdf-label-item": "./packages/pdf-label-item/index.js",
   "tooltip": "./packages/tooltip/index.js",
   "message-box": "./packages/message-box/index.js",
   "breadcrumb": "./packages/breadcrumb/index.js",
