@@ -2,6 +2,20 @@
 
 使用 `import util from 'ttd-element/utils/util'` 引入
 
+### request 接品请求
+
+```javascript
+import Request from 'ttd-element/utils/request';
+const {
+    request, /*axios实例*/
+    get, /*获取类请求, 返回code不为0时, 弹出error的提示*/
+    post, /*操作类请求, 返回code不为0时, 弹出error的提示, 返回code为0时, 弹出susscus的提示*/
+    getNoLoading, /**/
+    postNoLoading, /**/
+} = new Request({baseURL:'https://192.168.252:9111', crypto: true}).init()
+
+```
+
 ### date 日期格式化
 ```javascript
 import { format } from 'ttd-element/utils/data';

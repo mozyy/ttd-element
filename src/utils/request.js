@@ -12,16 +12,16 @@ const NO_LOADING = 4;
 
 /**
  * Request
- * @param option {url, crypto, request, response}
+ * @param option {baseURL, crypto, request, response}
  */
 export default class Request {
 
   /**
    * Request
-   * @param option {baseURL, crypto}
+   * @param option {baseURL, crypto, request, response}
    */
   constructor(option) {
-    Object.assgin(this, option);
+    Object.assign(this, option);
   }
 
   init() {
@@ -35,6 +35,9 @@ export default class Request {
       const hasLoading = !(_config & NO_LOADING);
       if (hasLoading) {
         loading.open();
+      }
+      if (typeof this.request === 'function') {
+        config = this.request(config);
       }
       logger(`上行${url}`, data);
 
@@ -111,6 +114,7 @@ export default class Request {
       request.post(url, params, { _config: METHOD_POST | NO_LOADING });
 
     return {
+      request,
       get,
       post,
       getNoLoading,
