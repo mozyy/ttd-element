@@ -46,7 +46,7 @@ export default class Request {
         const timestamp = requestTimestamp();
         const body = encodeRequest(data, timestamp);
         data = {body};
-        Object.assgin(headers, authorization(timestamp, '', body));
+        Object.assign(headers, authorization(timestamp, '', body));
       }
       config.data = qs.stringify(data);
       return config;
