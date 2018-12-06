@@ -70,7 +70,7 @@ export const authorization = (currTimeStamp, au, body) => {
  * 获取时间戳
  * @returns {string}
  */
-export const getTimeStamp = () => Date.new().toString();
+export const getTimeStamp = () => Date.now().toString();
 
 /**
  * base64转码
