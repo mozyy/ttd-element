@@ -12,13 +12,13 @@ const NO_LOADING = 4;
 
 /**
  * Request
- * @param option {baseURL, crypto, request, response}
+ * @param option {baseURL, crypto, request, response, toLogin}
  */
 export default class Request {
 
   /**
    * Request
-   * @param option {baseURL, crypto, request, response}
+   * @param option {baseURL, crypto, request, response, toLogin}
    */
   constructor(option) {
     Object.assign(this, option);
@@ -74,6 +74,10 @@ export default class Request {
       // 提示msg
       if (code !== 0) {
         errorMessage(msg);
+        // 登要登录
+        if (code === 1000) {
+          this.toLogin();
+        }
         throw Error(`接口${url}: ${msg}`);
       } else if (isPost) {
         successMessage(msg);
