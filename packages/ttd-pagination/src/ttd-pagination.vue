@@ -25,8 +25,8 @@
       getPage() {
         const {internalCurrentPage, internalPageSize} = this.$refs.pagination;
         const page = {
-          page: internalCurrentPage,
-          size: internalPageSize
+          pageNum: internalCurrentPage,
+          pageSize: internalPageSize
         };
         return page;
       }
