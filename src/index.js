@@ -4,6 +4,7 @@ import Pagination from '../packages/pagination/index.js';
 import TtdPagination from '../packages/ttd-pagination/index.js';
 import Backstage from '../packages/backstage/index.js';
 import RightPop from '../packages/right-pop/index.js';
+import RightPopGroup from '../packages/right-pop-group/index.js';
 import Dialog from '../packages/dialog/index.js';
 import TtdDialog from '../packages/ttd-dialog/index.js';
 import Autocomplete from '../packages/autocomplete/index.js';
@@ -94,6 +95,7 @@ const components = [
   TtdPagination,
   Backstage,
   RightPop,
+  RightPopGroup,
   Dialog,
   TtdDialog,
   Autocomplete,
@@ -216,6 +218,7 @@ module.exports = {
   TtdPagination,
   Backstage,
   RightPop,
+  RightPopGroup,
   Dialog,
   TtdDialog,
   Autocomplete,

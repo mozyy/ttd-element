@@ -125,6 +125,9 @@
 
 <ttd-right-pop :visible.sync="rightPopVisible" title="新建模板">
   <el-form :model="form">
+    <el-form-item>
+      <ttd-right-pop-group title="账号信息"/>
+    </el-form-item>
     <el-form-item label="模板名称" required>
       <el-input v-model="form.name" placeholder="请输入模板名称"></el-input>
     </el-form-item>
@@ -133,6 +136,9 @@
         <el-option label="机构一" value="1"></el-option>
         <el-option label="机构二" value="2"></el-option>
       </el-select>
+    </el-form-item>
+    <el-form-item>
+      <ttd-right-pop-group title="账号信息"/>
     </el-form-item>
     <el-form-item label="从属应用" required>
       <el-select v-model="form.app" placeholder="请选择应用">

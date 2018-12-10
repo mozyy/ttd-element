@@ -3,6 +3,7 @@
   "ttd-pagination": "./packages/ttd-pagination/index.js",
   "backstage": "./packages/backstage/index.js",
   "right-pop": "./packages/right-pop/index.js",
+  "right-pop-group": "./packages/right-pop-group/index.js",
   "dialog": "./packages/dialog/index.js",
   "ttd-dialog": "./packages/ttd-dialog/index.js",
   "autocomplete": "./packages/autocomplete/index.js",
