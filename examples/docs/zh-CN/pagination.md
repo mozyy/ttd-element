@@ -8,6 +8,7 @@
 ```html
 <template>
   <el-button @click="getTtdPage">获取页码</el-button>
+  <el-button @click="resetTtdPage">重置页码</el-button>
   <div class="block" style="width:100%;text-align:initial">
     <ttd-pagination :total="1000" @change="paginationChange" ref="ttdPagination"/>
   </div>
@@ -22,6 +23,9 @@ export default {
     getTtdPage() {
       const page = this.$refs.ttdPagination.getPage()
       console.log(page)
+    },
+    resetTtdPage() {
+      this.$refs.ttdPagination.reset()
     }
   }
 }
@@ -182,6 +186,9 @@ export default {
       getTtdPage() {
         const page = this.$refs.ttdPagination.getPage()
         console.log(page)
+      },
+      resetTtdPage() {
+        this.$refs.ttdPagination.reset()
       }
     },
     data() {
