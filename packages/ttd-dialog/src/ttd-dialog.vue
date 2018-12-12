@@ -1,7 +1,7 @@
 <template>
   <el-dialog 
     class="el-ttd-dialog" 
-    width="400px"
+    width="width"
     v-bind="$attrs" 
     @update:visible="$emit('update:visible', $event)"
     :show-close="false" 
@@ -17,7 +17,14 @@
 
 <script>
 export default {
-  name: 'TtdDialog'
+  name: 'TtdDialog',
+
+  props: {
+    width: {
+      type: String,
+      default: '400px'
+    }
+  }
 };
 
 </script>

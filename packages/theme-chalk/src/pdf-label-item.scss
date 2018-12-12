@@ -1,6 +1,6 @@
 @import "./mixins/mixins.scss";
 
-@include b(item) {
+@include b(pdf-label-item) {
   position: absolute;
   font-size: 18px;
   color: #F8AF00;
