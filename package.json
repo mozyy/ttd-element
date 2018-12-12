@@ -1,6 +1,6 @@
 {
   "name": "ttd-element",
-  "version": "2.4.11",
+  "version": "2.4.11.1",
   "description": "A Component Library for Vue.js. for ttd",
   "main": "lib/ttd-element.common.js",
   "files": [

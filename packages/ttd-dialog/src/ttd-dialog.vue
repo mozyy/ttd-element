@@ -1,7 +1,7 @@
 <template>
   <el-dialog 
     class="el-ttd-dialog" 
-    width="width"
+    :width="width"
     v-bind="$attrs" 
     @update:visible="$emit('update:visible', $event)"
     :show-close="false" 
