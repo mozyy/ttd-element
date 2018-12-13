@@ -14,7 +14,7 @@
                 :key="item.sourcesCode" 
                 @click="clickHandler(item.sourcesCode)"
             >
-                <icon class="el-admin-header--icon" :name="item.icon || 'home'"></icon>
+                <icon class="el-admin-header--icon" :name="item.sourcesCode"></icon>
                 <div class="el-admin-header--name">{{item.sourcesName}}</div>
             </li>
         </ul>

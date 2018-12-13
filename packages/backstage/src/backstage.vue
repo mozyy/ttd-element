@@ -26,14 +26,14 @@ export default {
       type: Array,
       required: true
     },
-    activeNavigate: Number,
+    activeNavigate: String,
     menu: {
       type: Array,
       default() {
         return [];
       }
     },
-    activeMenu: Number,
+    activeMenu: String,
     userInfo: Object
   },
 
