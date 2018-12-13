@@ -1,15 +1,15 @@
 <template>
   <div class="el-admin-aside">
     <el-menu
-      :default-active="defaultActive"
+      :default-active="String(active)"
       class="el-admin-aside__menu"
       text-color="#999"
-      @select="changeHandler"
+      @select="$emit('update:active', Number($event))"
     >
       <el-menu-item 
-        v-for="item in menu" 
+        v-for="item in sources" 
         class="el-admin-aside--item"
-        :index="item.sourcrsNo" 
+        :index="String(item.sourcrsNo)" 
         :key="item.sourcrsNo">
         <icon class="el-admin-aside--icon" :name="item.icon || 'home'"></icon>
         <span slot="title">{{ item.sourcesName }}</span>
@@ -23,29 +23,11 @@ export default {
   name: 'TtdAdminAside',
 
   props: {
-    menu: {
+    sources: {
       type: Array,
       required: true
     },
-    defaultActive: Number,
-    changeHandler: {
-      type: Function,
-      required: true
-    }
-  },
-
-  data() {
-    return {
-    };
-  },
-
-  watch: {
-  },
-
-  created() {
-  },
-
-  methods: {
+    active: Number
   }
 };
 

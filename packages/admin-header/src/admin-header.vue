@@ -8,11 +8,11 @@
         </div>
         <ul class="el-admin-header__navigate">
             <li
-                v-for="item in navigate" 
+                v-for="item in sources" 
                 class="el-admin-header--item"
                 :class="{'is-active':item.sourcrsNo === active}"
                 :key="item.sourcrsNo" 
-                @click="clickHandler(item)"
+                @click="clickHandler(item.sourcrsNo)"
             >
                 <icon class="el-admin-header--icon" :name="item.icon || 'home'"></icon>
                 <div class="el-admin-header--name">{{item.sourcesName}}</div>
@@ -26,26 +26,11 @@ export default {
   name: 'TtdAdminHeader',
 
   props: {
-    navigate: {
+    sources: {
       type: Array,
       required: true
     },
-    defaultActive: Number,
-    changeHandler: {
-      type: Function,
-      required: true
-    }
-  },
-
-  data() {
-    return {
-      active: this.navigate[0] ? this.navigate[0].sourcrsNo : ''
-    };
-  },
-
-  watch: {
-    defaultActive: 'setDefaultActive',
-    active: 'changeHandler'
+    active: Number
   },
 
   created() {
@@ -53,16 +38,12 @@ export default {
   },
 
   methods: {
-    clickHandler(item) {
-      this.active = item.sourcrsNo;
+    clickHandler(value) {
+      this.$emit('update:active', value);
     },
     setDefaultActive() {
-      const value = this.defaultActive;
-      if (value) {
-        const active = this.navigate.find(nav => nav.sourcrsNo === value);
-        if (active) {
-          this.active = active.sourcrsNo;
-        }
+      if (!this.active && this.sources[0]) {
+        this.$emit('update:active', this.sources[0].sourcrsNo);
       }
     }
   }

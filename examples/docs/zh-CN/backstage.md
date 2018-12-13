@@ -27,7 +27,7 @@ export default {
                     sourcesName: '存证数据'
                 },
             ],
-            defaultMenu: 20181128002,
+            activeMenu: 20181128002,
             navigate: [
                 {
                     icon: 'home',
@@ -60,7 +60,7 @@ export default {
                     sourcesName: '系统管理',
                 },
             ], 
-            defaultNavigate: 20181129003,
+            activeNavigate: 20181129003,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -84,12 +84,12 @@ export default {
             }
         }
     },
-    methods: {
-        navigateChangeHandler(navigate) {
-            this.$log('导航',navigate)
+    watch: {
+        activeMenu(value) {
+            this.$log('导航',value)
         },
-        menuChangeHandler(menu) {
-            this.$log('菜单',menu)            
+        activeNavigate(value) {
+            this.$log('菜单',value)            
         }
     }
 }
@@ -103,11 +103,9 @@ export default {
 <template>
     <div class="backstage-demo">
         <ttd-backstage 
-            :menu="menu" :default-menu="defaultMenu"
-            :navigate="navigate" :default-navigate="defaultNavigate"
+            :menu="menu" :active-menu.sync="activeMenu"
+            :navigate="navigate" :active-navigate.sync="activeNavigate"
             :user-info="userInfo"
-            :navigate-change-handler="navigateChangeHandler"
-            :menu-change-handler="menuChangeHandler"
         >
         </ttd-backstage>
     <div>
@@ -136,7 +134,7 @@ export default {
                     sourcesName: '存证数据'
                 },
             ],
-            defaultMenu: 20181128002,
+            activeMenu: 20181128002,
             navigate: [
                 {
                     icon: 'home',
@@ -169,7 +167,7 @@ export default {
                     sourcesName: '系统管理',
                 },
             ], 
-            defaultNavigate: 20181129003,
+            activeNavigate: 20181129003,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -193,12 +191,12 @@ export default {
             }
         }
     },
-    methods: {
-        navigateChangeHandler(navigate) {
-            this.$log('导航',navigate)
+    watch: {
+        activeMenu(value) {
+            this.$log('导航',value)
         },
-        menuChangeHandler(menu) {
-            this.$log('菜单',menu)            
+        activeNavigate(value) {
+            this.$log('菜单',value)            
         }
     }
 }

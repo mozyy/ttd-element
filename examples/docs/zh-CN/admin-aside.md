@@ -26,12 +26,12 @@ export default {
                     sourcesName: '存证数据'
                 },
             ],
-            defaultActive: 20181128002,
+            active: 20181128002,
         }
     },
-    methods: {
-        changeHandler(menu) {
-            this.$log(menu)
+    watch: {
+        active(value) {
+            this.$log(value)
         }
     }
 }
@@ -44,7 +44,7 @@ export default {
 ```html
 <template>
     <div class="admin-aside-demo">
-        <ttd-admin-aside :menu="menu" :default-active="defaultActive" :change-handler="changeHandler"/>
+        <ttd-admin-aside :sources="menu" :active.sync="active"/>
     <div>
 </template>
 
@@ -69,12 +69,12 @@ export default {
                     sourcesName: '存证数据'
                 },
             ],
-            defaultActive: 20181128002,
+            active: 20181128002,
         }
     },
-    methods: {
-        changeHandler(menu) {
-            this.$log(menu)
+    watch: {
+        active(value) {
+            this.$log(value)
         }
     }
 }

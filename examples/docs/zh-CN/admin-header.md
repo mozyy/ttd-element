@@ -41,7 +41,7 @@ export default {
                     sourcesName: '系统管理',
                 },
             ], 
-            defaultActive: 20181129004,
+            active: 20181129004,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -65,9 +65,9 @@ export default {
             }
         }
     },
-    methods: {
-        changeHandler(navigate) {
-            this.$log(navigate)
+    watch: {
+        active(value) {
+            this.$log(value)
         }
     }
 }
@@ -79,7 +79,7 @@ export default {
 ```html
 <template>
     <div>
-        <ttd-admin-header :navigate="navigate" :default-active="defaultActive" :change-handler="changeHandler">
+        <ttd-admin-header :sources="navigate" :active.sync="active">
             <ttd-admin-header-left :info="userInfo"/>
         </ttd-admin-header>
     </div>
@@ -124,7 +124,7 @@ export default {
                     sourcesName: '系统管理',
                 },
             ], 
-            defaultActive: 20181129004,
+            active: 20181129004,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -148,9 +148,9 @@ export default {
             }
         }
     },
-    methods: {
-        changeHandler(navigate) {
-            this.$log(navigate)
+    watch: {
+        active(value) {
+            this.$log(value)
         }
     }
 }
