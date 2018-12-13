@@ -13,48 +13,54 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    index: '1',
-                    name: '模板数据'
+                    sourcrsNo: 20181128001,
+                    sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    index: '2',
-                    name: '标签管理'
+                    sourcrsNo: 20181128002,
+                    sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    index: '3',
-                    name: '存证数据'
+                    sourcrsNo: 20181128003,
+                    sourcesName: '存证数据'
                 },
             ],
-            defaultMenu: '2',
+            defaultMenu: 20181128002,
             navigate: [
                 {
                     icon: 'home',
-                    name: '首页',
+                    sourcrsNo: 20181129001,
+                    sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    name: '模板管理',
+                    sourcrsNo: 20181129002,
+                    sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    name: '存证数据',
+                    sourcrsNo: 20181129003,
+                    sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    name: '取证申请',
+                    sourcrsNo: 20181129004,
+                    sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    name: '数据统计',
+                    sourcrsNo: 20181129005,
+                    sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    name: '系统管理',
+                    sourcrsNo: 20181129006,
+                    sourcesName: '系统管理',
                 },
             ], 
-            defaultNavigate: '模板管理',
+            defaultNavigate: 20181129003,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -116,48 +122,54 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    index: '1',
-                    name: '模板数据'
+                    sourcrsNo: 20181128001,
+                    sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    index: '2',
-                    name: '标签管理'
+                    sourcrsNo: 20181128002,
+                    sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    index: '3',
-                    name: '存证数据'
+                    sourcrsNo: 20181128003,
+                    sourcesName: '存证数据'
                 },
             ],
-            defaultMenu: '2',
+            defaultMenu: 20181128002,
             navigate: [
                 {
                     icon: 'home',
-                    name: '首页',
+                    sourcrsNo: 20181129001,
+                    sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    name: '模板管理',
+                    sourcrsNo: 20181129002,
+                    sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    name: '存证数据',
+                    sourcrsNo: 20181129003,
+                    sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    name: '取证申请',
+                    sourcrsNo: 20181129004,
+                    sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    name: '数据统计',
+                    sourcrsNo: 20181129005,
+                    sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    name: '系统管理',
+                    sourcrsNo: 20181129006,
+                    sourcesName: '系统管理',
                 },
             ], 
-            defaultNavigate: '模板管理',
+            defaultNavigate: 20181129003,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),

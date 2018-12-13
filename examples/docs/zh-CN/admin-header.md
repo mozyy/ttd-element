@@ -12,30 +12,36 @@ export default {
             navigate: [
                 {
                     icon: 'home',
-                    name: '首页',
+                    sourcrsNo: 20181129001,
+                    sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    name: '模板管理',
+                    sourcrsNo: 20181129002,
+                    sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    name: '存证数据',
+                    sourcrsNo: 20181129003,
+                    sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    name: '取证申请',
+                    sourcrsNo: 20181129004,
+                    sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    name: '数据统计',
+                    sourcrsNo: 20181129005,
+                    sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    name: '系统管理',
+                    sourcrsNo: 20181129006,
+                    sourcesName: '系统管理',
                 },
             ], 
-            defaultActive: '模板管理',
+            defaultActive: 20181129004,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -89,35 +95,62 @@ export default {
             navigate: [
                 {
                     icon: 'home',
-                    name: '首页',
+                    sourcrsNo: 20181129001,
+                    sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    name: '模板管理',
+                    sourcrsNo: 20181129002,
+                    sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    name: '存证数据',
+                    sourcrsNo: 20181129003,
+                    sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    name: '取证申请',
+                    sourcrsNo: 20181129004,
+                    sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    name: '数据统计',
+                    sourcrsNo: 20181129005,
+                    sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    name: '系统管理',
+                    sourcrsNo: 20181129006,
+                    sourcesName: '系统管理',
                 },
             ], 
-            defaultActive: '模板管理',
+            defaultActive: 20181129004,
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
-                avatar: Random.dataImage('34x34', '头像')
+                avatar: Random.dataImage('34x34', '头像'),
+                menu: [
+                    {
+                        icon: 'people',
+                        name: '个人中心',
+                        handler() {
+                            console.log('个人中心')
+                        }
+                    },
+                    {
+                        icon: 'back',
+                        name: '退出',
+                        handler() {
+                            console.log('退出')
+                        }
+                    }
+                ]
             }
+        }
+    },
+    methods: {
+        changeHandler(navigate) {
+            this.$log(navigate)
         }
     }
 }

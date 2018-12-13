@@ -10,12 +10,12 @@
             <li
                 v-for="item in navigate" 
                 class="el-admin-header--item"
-                :class="{'is-active':item.name === active}"
-                :key="item.name" 
+                :class="{'is-active':item.sourcrsNo === active}"
+                :key="item.sourcrsNo" 
                 @click="clickHandler(item)"
             >
-                <icon class="el-admin-header--icon" :name="item.icon"></icon>
-                <div class="el-admin-header--name">{{item.name}}</div>
+                <icon class="el-admin-header--icon" :name="item.icon || 'home'"></icon>
+                <div class="el-admin-header--name">{{item.sourcesName}}</div>
             </li>
         </ul>
     </div>
@@ -30,7 +30,7 @@ export default {
       type: Array,
       required: true
     },
-    defaultActive: String,
+    defaultActive: Number,
     changeHandler: {
       type: Function,
       required: true
@@ -39,7 +39,7 @@ export default {
 
   data() {
     return {
-      active: this.navigate[0] ? this.navigate[0].name : ''
+      active: this.navigate[0] ? this.navigate[0].sourcrsNo : ''
     };
   },
 
@@ -54,14 +54,14 @@ export default {
 
   methods: {
     clickHandler(item) {
-      this.active = item.name;
+      this.active = item.sourcrsNo;
     },
     setDefaultActive() {
       const value = this.defaultActive;
       if (value) {
-        const active = this.navigate.find(nav => nav.name === value);
+        const active = this.navigate.find(nav => nav.sourcrsNo === value);
         if (active) {
-          this.active = active.name;
+          this.active = active.sourcrsNo;
         }
       }
     }

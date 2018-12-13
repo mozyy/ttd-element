@@ -12,21 +12,21 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    index: '1',
-                    name: '模板数据'
+                    sourcrsNo: 20181128001,
+                    sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    index: '2',
-                    name: '标签管理'
+                    sourcrsNo: 20181128002,
+                    sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    index: '3',
-                    name: '存证数据'
+                    sourcrsNo: 20181128003,
+                    sourcesName: '存证数据'
                 },
             ],
-            defaultActive: '2',
+            defaultActive: 20181128002,
         }
     },
     methods: {
@@ -55,21 +55,26 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    index: '1',
-                    name: '模板数据'
+                    sourcrsNo: 20181128001,
+                    sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    index: '2',
-                    name: '标签管理'
+                    sourcrsNo: 20181128002,
+                    sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    index: '3',
-                    name: '存证数据'
+                    sourcrsNo: 20181128003,
+                    sourcesName: '存证数据'
                 },
             ],
-            defaultActive: '2'
+            defaultActive: 20181128002,
+        }
+    },
+    methods: {
+        changeHandler(menu) {
+            this.$log(menu)
         }
     }
 }
