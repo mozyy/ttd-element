@@ -12,21 +12,21 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128001,
+                    sourcesCode: "TEMPLATE_MANAGER",
                     sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128002,
+                    sourcesCode: "TEMPLATE_MANAGER1",
                     sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128003,
+                    sourcesCode: "TEMPLATE_MANAGER2",
                     sourcesName: '存证数据'
                 },
             ],
-            active: 20181128002,
+            active: "TEMPLATE_MANAGER1",
         }
     },
     watch: {
@@ -55,21 +55,21 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128001,
+                    sourcesCode: "TEMPLATE_MANAGER",
                     sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128002,
+                    sourcesCode: "TEMPLATE_MANAGER1",
                     sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128003,
+                    sourcesCode: "TEMPLATE_MANAGER2",
                     sourcesName: '存证数据'
                 },
             ],
-            active: 20181128002,
+            active: "TEMPLATE_MANAGER1",
         }
     },
     watch: {

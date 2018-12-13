@@ -13,17 +13,17 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128001,
+                    sourcesCode: "TEMPLATE_MANAGER",
                     sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128002,
+                    sourcesCode: "TEMPLATE_MANAGER1",
                     sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128003,
+                    sourcesCode: "TEMPLATE_MANAGER2",
                     sourcesName: '存证数据'
                 },
             ],
@@ -31,32 +31,32 @@ export default {
             navigate: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181129001,
+                    sourcesCode: "TEMPLATE_MANAGER3",
                     sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    sourcrsNo: 20181129002,
+                    sourcesCode: "TEMPLATE_MANAGER4",
                     sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    sourcrsNo: 20181129003,
+                    sourcesCode: "TEMPLATE_MANAGER5",
                     sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    sourcrsNo: 20181129004,
+                    sourcesCode: "TEMPLATE_MANAGER6",
                     sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    sourcrsNo: 20181129005,
+                    sourcesCode: "TEMPLATE_MANAGER7",
                     sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    sourcrsNo: 20181129006,
+                    sourcesCode: "TEMPLATE_MANAGER8",
                     sourcesName: '系统管理',
                 },
             ], 
@@ -120,17 +120,17 @@ export default {
             menu: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128001,
+                    sourcesCode: "TEMPLATE_MANAGER",
                     sourcesName: '模板数据'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128002,
+                    sourcesCode: "TEMPLATE_MANAGER1",
                     sourcesName: '标签管理'
                 },
                 {
                     icon: 'home',
-                    sourcrsNo: 20181128003,
+                    sourcesCode: "TEMPLATE_MANAGER2",
                     sourcesName: '存证数据'
                 },
             ],
@@ -138,32 +138,32 @@ export default {
             navigate: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181129001,
+                    sourcesCode: "TEMPLATE_MANAGER3",
                     sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    sourcrsNo: 20181129002,
+                    sourcesCode: "TEMPLATE_MANAGER4",
                     sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    sourcrsNo: 20181129003,
+                    sourcesCode: "TEMPLATE_MANAGER5",
                     sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    sourcrsNo: 20181129004,
+                    sourcesCode: "TEMPLATE_MANAGER6",
                     sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    sourcrsNo: 20181129005,
+                    sourcesCode: "TEMPLATE_MANAGER7",
                     sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    sourcrsNo: 20181129006,
+                    sourcesCode: "TEMPLATE_MANAGER8",
                     sourcesName: '系统管理',
                 },
             ], 

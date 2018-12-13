@@ -10,9 +10,9 @@
             <li
                 v-for="item in sources" 
                 class="el-admin-header--item"
-                :class="{'is-active':item.sourcrsNo === active}"
-                :key="item.sourcrsNo" 
-                @click="clickHandler(item.sourcrsNo)"
+                :class="{'is-active':item.sourcesCode === active}"
+                :key="item.sourcesCode" 
+                @click="clickHandler(item.sourcesCode)"
             >
                 <icon class="el-admin-header--icon" :name="item.icon || 'home'"></icon>
                 <div class="el-admin-header--name">{{item.sourcesName}}</div>
@@ -30,7 +30,7 @@ export default {
       type: Array,
       required: true
     },
-    active: Number
+    active: String
   },
 
   created() {
@@ -43,7 +43,7 @@ export default {
     },
     setDefaultActive() {
       if (!this.active && this.sources[0]) {
-        this.$emit('update:active', this.sources[0].sourcrsNo);
+        this.$emit('update:active', this.sources[0].sourcesCode);
       }
     }
   }

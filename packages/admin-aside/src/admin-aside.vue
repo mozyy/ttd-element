@@ -1,16 +1,16 @@
 <template>
   <div class="el-admin-aside">
     <el-menu
-      :default-active="String(active)"
+      :default-active="active"
       class="el-admin-aside__menu"
       text-color="#999"
-      @select="$emit('update:active', Number($event))"
+      @select="$emit('update:active', $event)"
     >
       <el-menu-item 
         v-for="item in sources" 
         class="el-admin-aside--item"
-        :index="String(item.sourcrsNo)" 
-        :key="item.sourcrsNo">
+        :index="item.sourcesCode" 
+        :key="item.sourcesCode">
         <icon class="el-admin-aside--icon" :name="item.icon || 'home'"></icon>
         <span slot="title">{{ item.sourcesName }}</span>
       </el-menu-item>
@@ -27,7 +27,7 @@ export default {
       type: Array,
       required: true
     },
-    active: Number
+    active: String
   }
 };
 

@@ -41,7 +41,7 @@ export default {
                     sourcesName: '系统管理',
                 },
             ], 
-            active: 20181129004,
+            active: "TEMPLATE_MANAGER5",
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
@@ -95,36 +95,36 @@ export default {
             navigate: [
                 {
                     icon: 'home',
-                    sourcrsNo: 20181129001,
+                    sourcesCode: "TEMPLATE_MANAGER3",
                     sourcesName: '首页',
                 },
                 {
                     icon: 'template',
-                    sourcrsNo: 20181129002,
+                    sourcesCode: "TEMPLATE_MANAGER4",
                     sourcesName: '模板管理',
                 },
                 {
                     icon: 'evidence',
-                    sourcrsNo: 20181129003,
+                    sourcesCode: "TEMPLATE_MANAGER5",
                     sourcesName: '存证数据',
                 },
                 {
                     icon: 'apply',
-                    sourcrsNo: 20181129004,
+                    sourcesCode: "TEMPLATE_MANAGER6",
                     sourcesName: '取证申请',
                 },
                 {
                     icon: 'statistics',
-                    sourcrsNo: 20181129005,
+                    sourcesCode: "TEMPLATE_MANAGER7",
                     sourcesName: '数据统计',
                 },
                 {
                     icon: 'manage',
-                    sourcrsNo: 20181129006,
+                    sourcesCode: "TEMPLATE_MANAGER8",
                     sourcesName: '系统管理',
                 },
             ], 
-            active: 20181129004,
+            active: "TEMPLATE_MANAGER5",
             userInfo: {
                 name: Random.cname(),
                 tel: Random.integer(18381335182, 18381355183),
