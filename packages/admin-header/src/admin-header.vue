@@ -39,7 +39,7 @@ export default {
 
   data() {
     return {
-      active: this.navigate[0].name
+      active: this.navigate[0] ? this.navigate[0].name : ''
     };
   },
 
