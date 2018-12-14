@@ -3,10 +3,9 @@
 
 @include b(pdf-label) {
   @include e(pdf) {
-    position: relative;
     display: inline-block;
     width: 560px;
-    height: 780px;
+    // height: 780px;
     vertical-align: middle;
   }
   @include e(turn) {

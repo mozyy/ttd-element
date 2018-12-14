@@ -29,7 +29,7 @@
 
 @include b(pdf) {
   border: 1px solid #D4D4D4;
-  @include e(canvas) {
+  @include e(box) {
     position: relative;
   }
 }

@@ -1,8 +1,10 @@
 <template>
   <div class="el-pdf" v-loading="loading">
     <ttd-pdf-header :page-number="pageNumber" :page-total="total" :page-change="pageChange"/>
-    <canvas class="el-pdf__canvas" :id="id"></canvas>
-    <slot></slot>
+    <div class="el-pdf__box">
+      <canvas class="el-pdf__canvas" :id="id"></canvas>
+      <slot></slot>
+    </div>
   </div>
 </template>
 
