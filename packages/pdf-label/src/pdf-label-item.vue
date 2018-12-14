@@ -1,8 +1,8 @@
 <template>
   <div class="el-pdf-label-item" :style="style" :class="{'is-active':active}">
     {{label.name}}
-    <div class="el-pdf-label__drag" ref="drag"></div>
-    <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label__item--close"></i>
+    <div class="el-pdf-label-item__drag" ref="drag"></div>
+    <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label-item__item--close"></i>
   </div>
 </template>
 
@@ -23,19 +23,19 @@ export default {
 
   data() {
     return {
-      labeled: this.label
+      labeled: this.pure ? this.label : {...this.label}
     };
   },
 
   computed: {
     style() {
-      const {left, top, width, height} = this.labeled;
+      const {xAxis, yAxis, labelWidth, labelHigh} = this.labeled;
       return {
-        left: left + 'px',
-        top: top + 'px',
-        width: width + 'px',
-        height: height + 'px',
-        lineHeight: height + 'px'
+        left: xAxis + 'px',
+        top: yAxis + 'px',
+        width: labelWidth + 'px',
+        height: labelHigh + 'px',
+        lineHeight: labelHigh + 'px'
       };
     }
   },
@@ -61,8 +61,8 @@ export default {
     },
     resizeHandler() {
       const {width, height} = getComputedStyle(this.$refs.label);
-      this.labeled.width = parseInt(width, 10);
-      this.labeled.height = parseInt(height, 10);
+      this.labeled.labelWidth = parseInt(width, 10);
+      this.labeled.labelHigh = parseInt(height, 10);
     },
     generateDragStart(type) {
       return ({clientX, clientY}) => {
@@ -72,11 +72,11 @@ export default {
         this.startX = clientX;
         this.startY = clientY;
         if (type === 'box') {
-          this.startLeft = this.labeled.left;
-          this.startTop = this.labeled.top;
+          this.startLeft = this.labeled.xAxis;
+          this.startTop = this.labeled.yAxis;
         } else if (type === 'scale') {
-          this.startWidth = this.labeled.width;
-          this.startHeight = this.labeled.height;
+          this.startWidth = this.labeled.labelWidth;
+          this.startHeight = this.labeled.labelHigh;
         }
       };
     },
@@ -86,11 +86,11 @@ export default {
           return;
         }
         if (type === 'box') {
-          this.labeled.left = clientX - this.startX + this.startLeft;
-          this.labeled.top = clientY - this.startY + this.startTop;
+          this.labeled.xAxis = clientX - this.startX + this.startLeft;
+          this.labeled.yAxis = clientY - this.startY + this.startTop;
         } else if (type === 'scale') {
-          this.labeled.width = clientX - this.startX + this.startWidth;
-          this.labeled.height = clientY - this.startY + this.startHeight;
+          this.labeled.labelWidth = clientX - this.startX + this.startWidth;
+          this.labeled.labelHigh = clientY - this.startY + this.startHeight;
         }
       };
     },

@@ -4,7 +4,12 @@
       :class="{'is-disable':leftDisable}" @click="turnLeft"></i>
     <ttd-pdf class="el-pdf-label__pdf" :src="src" 
       :page-number="page" :page-total="pageTotal" :page-change="pageChange">
-      <ttd-pdf-label-item v-for="(label,index) in labels" :label="label" :key="label.id" :active="active===index" @click.native="active = index"/>
+      <ttd-pdf-label-item 
+        v-for="label in currentLabels" 
+        :label="label" 
+        :key="label.labelNo" 
+        :active="active===label.labelNo" 
+        @click.native="active = label.labelNo"/>
     </ttd-pdf>
     <i class="el-pdf-label__turn el-icon-arrow-right" 
       :class="{'is-disable':rightDisable}" @click="turnRight"></i>
@@ -41,6 +46,9 @@ export default {
     },
     rightDisable() {
       return this.page >= this.total;
+    },
+    currentLabels() {
+      return this.labels.filter(label=> label.pageIndex === this.page);
     }
   },
 
