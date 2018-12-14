@@ -55,14 +55,20 @@ export const uuid = ()=> {
  * @param  {[type]} data [description]
  * @return {[type]}      [description]
  */
-export const authorization = (currTimeStamp, au, body) => {
-  let data = {};
-  data.os = 'web';
-  data.version = '1.7';
-  data.timestamp = currTimeStamp;
-  data.access_token = encryptMd5(currTimeStamp).substring(11, 17).toUpperCase();
-  data.cm = encryptMd5(body);
-  data.au = au;
+export const authorization = (timestamp = requestTimestamp(), au, body) => {
+
+  const access_token = encryptMd5(timestamp).substring(11, 17).toUpperCase();
+
+  const data = {
+    os: 'web',
+    version: '1.7',
+    timestamp,
+    access_token,
+    au
+  };
+  if (body) {
+    data.cm = encryptMd5(body);
+  }
   return data;
 };
 
