@@ -2,7 +2,7 @@
   <div class="el-pdf-label-item" :style="style" :class="{'is-active':active}">
     {{label.name}}
     <div class="el-pdf-label-item__drag" ref="drag"></div>
-    <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label-item__item--close"></i>
+    <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label-item__close"></i>
   </div>
 </template>
 
@@ -35,7 +35,8 @@ export default {
         top: yAxis + 'px',
         width: labelWidth + 'px',
         height: labelHigh + 'px',
-        lineHeight: labelHigh + 'px'
+        lineHeight: labelHigh + 'px',
+        opacity: this.pure ? 0.8 : 1
       };
     }
   },

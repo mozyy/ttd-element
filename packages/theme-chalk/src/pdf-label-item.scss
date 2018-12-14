@@ -34,7 +34,7 @@
       transform: rotate(135deg) translate(-2px,5px);
     }
   }
-  @include m(close) {
+  @include e(close) {
     position: absolute;
     right: -5px;
     top: -5px;
