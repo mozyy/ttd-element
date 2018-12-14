@@ -3,13 +3,18 @@
     <i class="el-pdf-label__turn el-icon-arrow-left" 
       :class="{'is-disable':leftDisable}" @click="turnLeft"></i>
     <ttd-pdf class="el-pdf-label__pdf" :src="src" 
-      :page-number="page" :page-total="pageTotal" :page-change="pageChange">
+      :page-number="page" :page-total="pageTotal" :page-change="pageChange" ref="pdf">
       <ttd-pdf-label-item 
-        v-for="label in currentLabels" 
+        v-for="(label,index) in currentLabels" 
         :label="label" 
-        :key="label.labelNo" 
-        :active="active===label.labelNo" 
-        @click.native="active = label.labelNo"/>
+        :key="index" 
+        :active="active===index" 
+        @click.native="active = index"/>
+        <ttd-pdf-label-item
+          v-if="newLabel"
+          :label="newLabel"
+          pure
+        />
     </ttd-pdf>
     <i class="el-pdf-label__turn el-icon-arrow-right" 
       :class="{'is-disable':rightDisable}" @click="turnRight"></i>
@@ -29,6 +34,9 @@ export default {
     labels: {
       type: Array,
       required: true
+    },
+    newLabel: {
+      type: Object
     }
   },
 
@@ -71,6 +79,9 @@ export default {
       if (!this.rightDisable) {
         this.page += 1;
       }
+    },
+    getPdfCanvas() {
+      return this.$refs.pdf.$refs.pdfCanvas;
     }
   }
 };

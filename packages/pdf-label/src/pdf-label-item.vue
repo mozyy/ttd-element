@@ -1,7 +1,7 @@
 <template>
   <div class="el-pdf-label-item" :style="style" :class="{'is-active':active}">
     {{label.name}}
-    <div class="el-pdf-label-item__drag" ref="drag"></div>
+    <div v-if="!pure" class="el-pdf-label-item__drag" ref="drag"></div>
     <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label-item__close"></i>
   </div>
 </template>
@@ -21,15 +21,9 @@ export default {
     pure: Boolean
   },
 
-  data() {
-    return {
-      labeled: this.pure ? this.label : {...this.label}
-    };
-  },
-
   computed: {
     style() {
-      const {xAxis, yAxis, labelWidth, labelHigh} = this.labeled;
+      const {xAxis, yAxis, labelWidth, labelHigh} = this.label;
       return {
         left: xAxis + 'px',
         top: yAxis + 'px',
@@ -62,8 +56,8 @@ export default {
     },
     resizeHandler() {
       const {width, height} = getComputedStyle(this.$refs.label);
-      this.labeled.labelWidth = parseInt(width, 10);
-      this.labeled.labelHigh = parseInt(height, 10);
+      this.label.labelWidth = parseInt(width, 10);
+      this.label.labelHigh = parseInt(height, 10);
     },
     generateDragStart(type) {
       return ({clientX, clientY}) => {
@@ -73,11 +67,11 @@ export default {
         this.startX = clientX;
         this.startY = clientY;
         if (type === 'box') {
-          this.startLeft = this.labeled.xAxis;
-          this.startTop = this.labeled.yAxis;
+          this.startLeft = this.label.xAxis;
+          this.startTop = this.label.yAxis;
         } else if (type === 'scale') {
-          this.startWidth = this.labeled.labelWidth;
-          this.startHeight = this.labeled.labelHigh;
+          this.startWidth = this.label.labelWidth;
+          this.startHeight = this.label.labelHigh;
         }
       };
     },
@@ -87,16 +81,16 @@ export default {
           return;
         }
         if (type === 'box') {
-          this.labeled.xAxis = clientX - this.startX + this.startLeft;
-          this.labeled.yAxis = clientY - this.startY + this.startTop;
+          this.label.xAxis = clientX - this.startX + this.startLeft;
+          this.label.yAxis = clientY - this.startY + this.startTop;
         } else if (type === 'scale') {
-          this.labeled.labelWidth = clientX - this.startX + this.startWidth;
-          this.labeled.labelHigh = clientY - this.startY + this.startHeight;
+          this.label.labelWidth = clientX - this.startX + this.startWidth;
+          this.label.labelHigh = clientY - this.startY + this.startHeight;
         }
       };
     },
     getLabel() {
-      return this.labeled;
+      return this.label;
     }
   }
 };

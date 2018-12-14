@@ -2,7 +2,7 @@
   <div class="el-pdf" v-loading="loading">
     <ttd-pdf-header :page-number="pageNumber" :page-total="total" :page-change="pageChange"/>
     <div class="el-pdf__box">
-      <canvas class="el-pdf__canvas" :id="id"></canvas>
+      <canvas class="el-pdf__canvas" :id="id" ref="pdfCanvas"></canvas>
       <slot></slot>
     </div>
   </div>
@@ -50,7 +50,6 @@ export default {
   },
 
   mounted() {
-    this.getWidth();
     this.init();
   },
 
@@ -72,8 +71,7 @@ export default {
     },
     async renderPage() {
       this.page = await this.pdf.getPage(this.pageNumber);
-      const scale = this.width / this.page.view[2];
-      const viewport = this.page.getViewport(scale);
+      const viewport = this.page.getViewport(1.5);
 
       const canvas = document.getElementById(this.id);
       const context = canvas.getContext('2d');
@@ -85,9 +83,6 @@ export default {
         viewport: viewport
       };
       this.page.render(renderContext);
-    },
-    getWidth() {
-      this.width = parseInt(getComputedStyle(this.$el).width, 10);
     }
   }
 };
