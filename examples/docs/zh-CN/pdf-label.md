@@ -26,9 +26,6 @@ export default {
       }
     }
   },
-  mounted() {
-    this.getPdfCanvasStyle()
-  },
 
   beforeDestroy() {
     document.removeEventListener('mousemove', this.mousemoveHanler);
@@ -36,18 +33,6 @@ export default {
     document.removeEventListener('mousedown', this.mousedownHanler);
   },
   methods: {
-    getPdfCanvasStyle() {
-      window.vm = this;
-      const pdfLabel = this.$refs.pdfLabel.$el;
-      const canvas = this.$refs.pdfLabel.getPdfCanvas();
-      const pdfLabelCanvas = pdfLabel.getBoundingClientRect()
-      const rectCanvas = canvas.getBoundingClientRect()
-      const distance = {
-        x: rectCanvas.left + pdfLabelCanvas.left,
-        y: rectCanvas.top + pdfLabelCanvas.top,
-      }
-      this.distance = distance;
-    },
     getAxis(event) {
       const rectCanvas = this.$refs.pdfLabel.getPdfCanvas().getBoundingClientRect()
       return {
@@ -125,9 +110,6 @@ export default {
       }
     }
   },
-  mounted() {
-    this.getPdfCanvasStyle()
-  },
 
   beforeDestroy() {
     document.removeEventListener('mousemove', this.mousemoveHanler);
@@ -135,18 +117,6 @@ export default {
     document.removeEventListener('mousedown', this.mousedownHanler);
   },
   methods: {
-    getPdfCanvasStyle() {
-      window.vm = this;
-      const pdfLabel = this.$refs.pdfLabel.$el;
-      const canvas = this.$refs.pdfLabel.getPdfCanvas();
-      const pdfLabelCanvas = pdfLabel.getBoundingClientRect()
-      const rectCanvas = canvas.getBoundingClientRect()
-      const distance = {
-        x: rectCanvas.left + pdfLabelCanvas.left,
-        y: rectCanvas.top + pdfLabelCanvas.top,
-      }
-      this.distance = distance;
-    },
     getAxis(event) {
       const rectCanvas = this.$refs.pdfLabel.getPdfCanvas().getBoundingClientRect()
       return {
