@@ -82,6 +82,10 @@ export default class Request {
       } else if (isPost) {
         successMessage(msg);
       }
+      // list为null时默认[]
+      if (resp.isArray === 2 && resp.list === null) {
+        resp.list = [];
+      }
       return resp;
     };
 

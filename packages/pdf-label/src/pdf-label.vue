@@ -104,10 +104,10 @@ export default {
       this.$el.addEventListener('mousedown', this.mousedownHanler);
       const data = {
         // __CURRENT_LABEL_FLAG: true,
+        ...label,
         pageIndex: this.page, // 标记页码
         labelWidth, // 标记域宽度
         labelHigh, // 标记域高度
-        ...label,
         ...this.getAxis(event)
       };
       this.newLabel = data;
