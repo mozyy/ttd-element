@@ -1,6 +1,6 @@
 <template>
   <div class="el-pdf-label-item" :style="style" :class="{'is-active':active}">
-    {{label.name}}
+    {{label.labelName}}
     <div v-if="!pure" class="el-pdf-label-item__drag" ref="drag"></div>
     <i v-if="!pure" @click="deleteLabel" class="el-icon-circle-close el-pdf-label-item__close"></i>
   </div>

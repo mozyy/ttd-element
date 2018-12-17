@@ -9,7 +9,8 @@
         :label="label" 
         :key="index" 
         :active="active===index" 
-        @click.native="active = index"/>
+        @click.native="active = index"
+        @deleteLabel="deleteLabel(index)"/>
         <ttd-pdf-label-item
           v-if="newLabel"
           :label="newLabel"
@@ -34,9 +35,6 @@ export default {
     labels: {
       type: Array,
       required: true
-    },
-    newLabel: {
-      type: Object
     }
   },
 
@@ -44,7 +42,8 @@ export default {
     return {
       page: 1,
       total: 2,
-      active: 0
+      active: 0,
+      newLabel: {}
     };
   },
 
@@ -58,6 +57,12 @@ export default {
     currentLabels() {
       return this.labels.filter(label=> label.pageIndex === this.page);
     }
+  },
+
+  beforeDestroy() {
+    this.$el.removeEventListener('mousemove', this.mousemoveHanler);
+    this.$el.removeEventListener('contextmenu', this.contextmenuHanler);
+    this.$el.removeEventListener('mousedown', this.mousedownHanler);
   },
 
   methods: {
@@ -82,6 +87,47 @@ export default {
     },
     getPdfCanvas() {
       return this.$refs.pdf.$refs.pdfCanvas;
+    },
+    deleteLabel(index) {
+      this.$emit('delete-label', index);
+    },
+    getAxis(event) {
+      const rectCanvas = this.$refs.pdf.$refs.pdfCanvas.getBoundingClientRect();
+      return {
+        xAxis: event.clientX - rectCanvas.left, // X轴坐标
+        yAxis: event.clientY - rectCanvas.top // Y轴坐标，相对于左上角原点。
+      };
+    },
+    createNewLabel(label, event, labelWidth = 100, labelHigh = 50) {
+      this.$el.addEventListener('mousemove', this.mousemoveHanler);
+      this.$el.addEventListener('contextmenu', this.contextmenuHanler);
+      this.$el.addEventListener('mousedown', this.mousedownHanler);
+      const data = {
+        // __CURRENT_LABEL_FLAG: true,
+        pageIndex: this.page, // 标记页码
+        labelWidth, // 标记域宽度
+        labelHigh, // 标记域高度
+        ...label,
+        ...this.getAxis(event)
+      };
+      this.newLabel = data;
+    },
+    mousemoveHanler(event) {
+      Object.assign(this.newLabel, this.getAxis(event));
+    },
+    mousedownHanler(event) {
+      if (event.button === 0) {
+        this.$emit('create-label', this.newLabel);
+      }
+    },
+    contextmenuHanler(event) {
+      if (event.button === 2) {
+        event.preventDefault();
+        this.newLabel = null;
+        this.$el.removeEventListener('mousemove', this.mousemoveHanler);
+        this.$el.removeEventListener('contextmenu', this.contextmenuHanler);
+        this.$el.removeEventListener('mousedown', this.mousedownHanler);
+      }
     }
   }
 };
