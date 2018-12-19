@@ -123,11 +123,14 @@ export default {
     contextmenuHanler(event) {
       if (event.button === 2) {
         event.preventDefault();
-        this.newLabel = null;
-        this.$el.removeEventListener('mousemove', this.mousemoveHanler);
-        this.$el.removeEventListener('contextmenu', this.contextmenuHanler);
-        this.$el.removeEventListener('mousedown', this.mousedownHanler);
+        this.cancelCreateLabel();
       }
+    },
+    cancelCreateLabel() {
+      this.newLabel = null;
+      this.$el.removeEventListener('mousemove', this.mousemoveHanler);
+      this.$el.removeEventListener('contextmenu', this.contextmenuHanler);
+      this.$el.removeEventListener('mousedown', this.mousedownHanler);
     }
   }
 };
