@@ -1,4 +1,6 @@
 <script>
+import { format } from 'ttd-element/lib/utils/date';
+
   export default {
     data() {
       return {
@@ -9,7 +11,8 @@
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333,
-          tag: '家'
+          tag: '家',
+          created: 1542628577000,
         }, {
           date: '2016-05-02',
           name: '王小虎',
@@ -17,7 +20,8 @@
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333,
-          tag: '公司'
+          tag: '公司',
+          created: 1542628177000
         }, {
           date: '2016-05-04',
           name: '王小虎',
@@ -25,7 +29,8 @@
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333,
-          tag: '家'
+          tag: '家',
+          created: 1542628277000,
         }, {
           date: '2016-05-01',
           name: '王小虎',
@@ -33,7 +38,8 @@
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333,
-          tag: '公司'
+          tag: '公司',
+          created: 1542628537000,
         }],
         tableData2: [{
           date: '2016-05-02',
@@ -368,6 +374,10 @@
 
       indexMethod(index) {
         return index * 2;
+      },
+
+      formatDate({created}) {
+        return format(new Date(created), 'yyyy-MM-dd HH:mm')
       }
     },
 
@@ -417,7 +427,7 @@
   <ttd-table
     :data="tableData">
     <el-table-column
-      prop="date"
+      :formatter="formatDate"
       label="日期"
       width="180">
     </el-table-column>
@@ -432,8 +442,8 @@
     </el-table-column>
     <el-table-column
       label="操作">
-      <span slot-scope="scope">
-        <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+      <span slot-scope="{row}">
+        <el-button @click="handleClick(row)" type="text" size="small">查看</el-button>
       </span>
     </el-table-column>
   </ttd-table>

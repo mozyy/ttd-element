@@ -41,6 +41,9 @@
   .el-input, .el-select {
     width: 100%;
   }
+  @include e(scrollbar) {
+    height: 100%;
+  }
 
   &.dialog-fade-enter-active{
     animation: right-pop-fade-right-in .3s

@@ -12,7 +12,7 @@
           <i class="el-icon-close" @click="$emit('update:visible', false)"></i>
       </div>
     </ttd-title>
-    <el-scrollbar class="el-scrollbar-box">
+    <el-scrollbar class="el-right-pop__scrollbar">
       <slot></slot>
     </el-scrollbar>
     <template slot="footer">

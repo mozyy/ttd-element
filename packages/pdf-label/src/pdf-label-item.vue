@@ -61,9 +61,9 @@ export default {
     },
     generateDragStart(type) {
       return ({clientX, clientY}) => {
-        if (!this.active) {
-          return;
-        }
+        // if (!this.active) {
+        //   return;
+        // }
         this.startX = clientX;
         this.startY = clientY;
         if (type === 'box') {
@@ -77,9 +77,9 @@ export default {
     },
     generateDrag(type) {
       return ({clientX, clientY})=> {
-        if (!this.active) {
-          return;
-        }
+        // if (!this.active) {
+        //   return;
+        // }
         if (type === 'box') {
           this.label.xAxis = clientX - this.startX + this.startLeft;
           this.label.yAxis = clientY - this.startY + this.startTop;
