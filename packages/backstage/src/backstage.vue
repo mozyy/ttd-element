@@ -6,7 +6,7 @@
       </ttd-admin-header>
     </el-header>
     <el-container class="el-backstage__container">
-      <el-aside v-if="menu.length>0" class="el-backstage__aside" width="200px">
+      <el-aside v-if="menu.length>0" class="el-backstage__aside" width="160px">
         <ttd-admin-aside :sources="menu" :active="activeMenu" @update:active="$emit('update:activeMenu',$event)"/>
       </el-aside>
       <el-main class="el-backstage__main">
