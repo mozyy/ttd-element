@@ -15,6 +15,12 @@
   @include when(drag) {
     cursor: grabbing;
   }
+  @include e(text) {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   @include e(drag) {
     position: absolute;
     bottom: 0;

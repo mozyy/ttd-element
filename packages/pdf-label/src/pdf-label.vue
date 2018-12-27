@@ -98,7 +98,7 @@ export default {
         yAxis: event.clientY - rectCanvas.top // Y轴坐标，相对于左上角原点。
       };
     },
-    createNewLabel(label, event, labelWidth = 100, labelHigh = 50) {
+    createNewLabel(label, event, labelWidth = 200, labelHigh = 30) {
       this.$el.addEventListener('mousemove', this.mousemoveHanler);
       this.$el.addEventListener('contextmenu', this.contextmenuHanler);
       this.$el.addEventListener('mousedown', this.mousedownHanler);
