@@ -48,7 +48,9 @@ export default class Request {
         data = {body};
         Object.assign(headers, authorization(timestamp, '', body));
       }
-      config.data = qs.stringify(data);
+      if (!(data instanceof FormData)) {
+        config.data = qs.stringify(data);
+      }
       return config;
     };
 
