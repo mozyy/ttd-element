@@ -64,7 +64,9 @@ export default {
     page(value, old) {
       if (value < 1 || value > this.total) {
         warnMessage('您输入的页码不正确, 请重新输入');
-        this.page = old;
+        this.$nextTick(()=>{
+          this.page = old;
+        });
       }
     }
   },
