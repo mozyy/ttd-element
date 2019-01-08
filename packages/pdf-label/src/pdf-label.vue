@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { warnMessage } from 'ttd-element/src/utils/message';
 
 export default {
   name: 'TtdPdfLabel',
@@ -41,7 +42,7 @@ export default {
   data() {
     return {
       page: 1,
-      total: 2,
+      total: 1,
       active: 0,
       newLabel: {}
     };
@@ -56,6 +57,15 @@ export default {
     },
     currentLabels() {
       return this.labels.filter(label=> label.pageIndex === this.page);
+    }
+  },
+
+  watch: {
+    page(value, old) {
+      if (value < 1 || value > this.total) {
+        warnMessage('您输入的页码不正确, 请重新输入');
+        this.page = old;
+      }
     }
   },
 

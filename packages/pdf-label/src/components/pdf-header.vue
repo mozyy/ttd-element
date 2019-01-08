@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { warnMessage } from 'ttd-element/src/utils/message';
 
 export default {
   name: 'TtdPdfHeader',
@@ -42,11 +41,8 @@ export default {
   methods: {
     changePage(value) {
       const page = Number(value);
-      if (page < 1 || page > this.pageTotal) {
-        warnMessage('您输入的页码不正确, 请重新输入');
-      } else if (page !== this.pageNumber) {
-        this.pageChange(page);
-      }
+      this.pageChange(page);
+
     }
   }
 };
