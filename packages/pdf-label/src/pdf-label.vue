@@ -10,7 +10,7 @@
         :key="index" 
         :active="active===index" 
         @click.native="active = index"
-        @deleteLabel="deleteLabel(index)"/>
+        @deleteLabel="deleteLabel"/>
         <ttd-pdf-label-item
           v-if="newLabel"
           :label="newLabel"
@@ -100,8 +100,11 @@ export default {
     getPdfCanvas() {
       return this.$refs.pdf.$refs.pdfCanvas;
     },
-    deleteLabel(index) {
-      this.$emit('delete-label', index);
+    deleteLabel(label) {
+      const index = this.labels.indexOf(label);
+      if (index > -1) {
+        this.$emit('delete-label', index);
+      }
     },
     getAxis(event) {
       const rectCanvas = this.$refs.pdf.$refs.pdfCanvas.getBoundingClientRect();
