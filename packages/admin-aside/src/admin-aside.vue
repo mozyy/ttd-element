@@ -11,7 +11,7 @@
         class="el-admin-aside--item"
         :index="item.sourcesCode" 
         :key="item.sourcesCode">
-        <icon class="el-admin-aside--icon" :name="item.sourcesCode"></icon>
+        <icon class="el-admin-aside--icon" :name="item.icon"></icon>
         <span slot="title">{{ item.sourcesName }}</span>
       </el-menu-item>
     </el-menu>

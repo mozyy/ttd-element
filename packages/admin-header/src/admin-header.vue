@@ -14,7 +14,7 @@
                 :key="item.sourcesCode" 
                 @click="$emit('update:active', item.sourcesCode)"
             >
-                <icon class="el-admin-header--icon" :name="item.sourcesCode"></icon>
+                <icon class="el-admin-header--icon" :name="item.icon"></icon>
                 <div class="el-admin-header--name">{{item.sourcesName}}</div>
             </li>
         </ul>
