@@ -15,5 +15,9 @@
     thead {
       color: #272D38;
     }
+    .el-table__body .cell {
+      height: 40px;
+      line-height: 40px;
+    }
   }
 }
