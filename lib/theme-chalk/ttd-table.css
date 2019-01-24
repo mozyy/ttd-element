@@ -1,1 +1,1 @@
-.el-ttd-table.el-table{color:#222;font-size:13px}.el-ttd-table.el-table th{padding:4px 0;background:#F4F7FD}.el-ttd-table.el-table td{padding:2px 0}.el-ttd-table.el-table thead{color:#272D38}.el-ttd-table.el-table .el-table__body .cell{height:40px;line-height:40px}
+.el-ttd-table.el-table{color:#222;font-size:13px}.el-ttd-table.el-table th{padding:4px 0;background:#F4F7FD}.el-ttd-table.el-table td{padding:2px 0}.el-ttd-table.el-table thead{color:#272D38}.el-ttd-table.el-table .el-table__body .cell{min-height:40px;line-height:40px}
