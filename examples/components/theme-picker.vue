@@ -22,7 +22,8 @@
 </style>
 
 <script>
-  import { version } from 'main/index.js';
+  import Element from 'main/index.js';
+  const { version } = Element;
 
   const ORIGINAL_THEME = '#2e6be6';
   export default {
