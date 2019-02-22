@@ -40,7 +40,7 @@
         // Browser globals (root is window)
         root.Popper = factory();
     }
-}(this, function () {
+}(window, function () {
 
     'use strict';
 
