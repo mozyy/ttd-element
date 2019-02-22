@@ -121,68 +121,59 @@
           </el-option>
           <slot></slot>
         </el-scrollbar>
-        <p
-          class="el-select-dropdown__empty"
-          v-if="emptyText &&
-            (!allowCreate || loading || (allowCreate && options.length === 0 ))">
-          {{ emptyText }}
-        </p>
+        <template v-if="emptyText && (!allowCreate || loading || (allowCreate && options.length === 0 ))">
+          <slot name="empty" v-if="$slots.empty"></slot>
+          <p class="el-select-dropdown__empty" v-else>
+            {{ emptyText }}
+          </p>
+        </template>
       </el-select-menu>
     </transition>
   </div>
 </template>
 
 <script type="text/babel">
-  import Emitter from 'ttd-element/src/mixins/emitter';
-  import Focus from 'ttd-element/src/mixins/focus';
-  import Locale from 'ttd-element/src/mixins/locale';
-  import ElInput from 'ttd-element/packages/input';
+  import Emitter from 'element-ui/src/mixins/emitter';
+  import Focus from 'element-ui/src/mixins/focus';
+  import Locale from 'element-ui/src/mixins/locale';
+  import ElInput from 'element-ui/packages/input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
-  import ElTag from 'ttd-element/packages/tag';
-  import ElScrollbar from 'ttd-element/packages/scrollbar';
+  import ElTag from 'element-ui/packages/tag';
+  import ElScrollbar from 'element-ui/packages/scrollbar';
   import debounce from 'throttle-debounce/debounce';
-  import Clickoutside from 'ttd-element/src/utils/clickoutside';
-  import { addResizeListener, removeResizeListener } from 'ttd-element/src/utils/resize-event';
-  import { t } from 'ttd-element/src/locale';
-  import scrollIntoView from 'ttd-element/src/utils/scroll-into-view';
-  import { getValueByPath } from 'ttd-element/src/utils/util';
-  import { valueEquals, isIE, isEdge } from 'ttd-element/src/utils/util';
+  import Clickoutside from 'element-ui/src/utils/clickoutside';
+  import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
+  import { t } from 'element-ui/src/locale';
+  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
+  import { getValueByPath } from 'element-ui/src/utils/util';
+  import { valueEquals, isIE, isEdge } from 'element-ui/src/utils/util';
   import NavigationMixin from './navigation-mixin';
-  import { isKorean } from 'ttd-element/src/utils/shared';
-
+  import { isKorean } from 'element-ui/src/utils/shared';
   export default {
     mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],
-
     name: 'ElSelect',
-
     componentName: 'ElSelect',
-
     inject: {
       elForm: {
         default: ''
       },
-
       elFormItem: {
         default: ''
       }
     },
-
     provide() {
       return {
         'select': this
       };
     },
-
     computed: {
       _elFormItemSize() {
         return (this.elFormItem || {}).elFormItemSize;
       },
-
       readonly() {
         return !this.filterable || this.multiple || (!isIE() && !isEdge() && !this.visible);
       },
-
       showClose() {
         let hasValue = this.multiple
           ? Array.isArray(this.value) && this.value.length > 0
@@ -193,15 +184,12 @@
           hasValue;
         return criteria;
       },
-
       iconClass() {
         return this.remote && this.filterable ? '' : (this.visible ? 'arrow-up is-reverse' : 'arrow-up');
       },
-
       debounce() {
         return this.remote ? 300 : 0;
       },
-
       emptyText() {
         if (this.loading) {
           return this.loadingText || this.t('el.select.loading');
@@ -216,28 +204,23 @@
         }
         return null;
       },
-
       showNewOption() {
         let hasExistingOption = this.options.filter(option => !option.created)
           .some(option => option.currentLabel === this.query);
         return this.filterable && this.allowCreate && this.query !== '' && !hasExistingOption;
       },
-
       selectSize() {
         return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
       },
-
       selectDisabled() {
         return this.disabled || (this.elForm || {}).disabled;
       },
-
       collapseTagSize() {
         return ['small', 'mini'].indexOf(this.selectSize) > -1
           ? 'mini'
           : 'small';
       }
     },
-
     components: {
       ElInput,
       ElSelectMenu,
@@ -245,9 +228,7 @@
       ElTag,
       ElScrollbar
     },
-
     directives: { Clickoutside },
-
     props: {
       name: String,
       id: String,
@@ -304,7 +285,6 @@
         default: true
       }
     },
-
     data() {
       return {
         options: [],
@@ -331,18 +311,15 @@
         isSilentBlur: false
       };
     },
-
     watch: {
       selectDisabled() {
         this.$nextTick(() => {
           this.resetInputHeight();
         });
       },
-
       placeholder(val) {
         this.cachedPlaceHolder = this.currentPlaceholder = val;
       },
-
       value(val, oldVal) {
         if (this.multiple) {
           this.resetInputHeight();
@@ -364,7 +341,6 @@
           this.dispatch('ElFormItem', 'el.form.change', val);
         }
       },
-
       visible(val) {
         if (!val) {
           this.broadcast('ElSelectDropdown', 'destroyPopper');
@@ -413,7 +389,6 @@
         }
         this.$emit('visible-change', val);
       },
-
       options() {
         if (this.$isServer) return;
         this.$nextTick(() => {
@@ -431,7 +406,6 @@
         }
       }
     },
-
     methods: {
       handleComposition(event) {
         const text = event.target.value;
@@ -478,7 +452,6 @@
           this.checkDefaultFirstOption();
         }
       },
-
       scrollToOption(option) {
         const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
         if (this.$refs.popper && target) {
@@ -487,22 +460,18 @@
         }
         this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();
       },
-
       handleMenuEnter() {
         this.$nextTick(() => this.scrollToOption(this.selected));
       },
-
       emitChange(val) {
         if (!valueEquals(this.value, val)) {
           this.$emit('change', val);
         }
       },
-
       getOption(value) {
         let option;
         const isObject = Object.prototype.toString.call(value).toLowerCase() === '[object object]';
         const isNull = Object.prototype.toString.call(value).toLowerCase() === '[object null]';
-
         for (let i = this.cachedOptions.length - 1; i >= 0; i--) {
           const cachedOption = this.cachedOptions[i];
           const isEqual = isObject
@@ -525,7 +494,6 @@
         }
         return newOption;
       },
-
       setSelected() {
         if (!this.multiple) {
           let option = this.getOption(this.value);
@@ -551,7 +519,6 @@
           this.resetInputHeight();
         });
       },
-
       handleFocus(event) {
         if (!this.softFocus) {
           if (this.automaticDropdown || this.filterable) {
@@ -563,12 +530,10 @@
           this.softFocus = false;
         }
       },
-
       blur() {
         this.visible = false;
         this.$refs.reference.blur();
       },
-
       handleBlur(event) {
         setTimeout(() => {
           if (this.isSilentBlur) {
@@ -579,33 +544,26 @@
         }, 50);
         this.softFocus = false;
       },
-
       handleClearClick(event) {
         this.deleteSelected(event);
       },
-
       doDestroy() {
         this.$refs.popper && this.$refs.popper.doDestroy();
       },
-
       handleClose() {
         this.visible = false;
       },
-
       toggleLastOptionHitState(hit) {
         if (!Array.isArray(this.selected)) return;
         const option = this.selected[this.selected.length - 1];
         if (!option) return;
-
         if (hit === true || hit === false) {
           option.hitState = hit;
           return hit;
         }
-
         option.hitState = !option.hitState;
         return option.hitState;
       },
-
       deletePrevTag(e) {
         if (e.target.value.length <= 0 && !this.toggleLastOptionHitState()) {
           const value = this.value.slice();
@@ -614,19 +572,16 @@
           this.emitChange(value);
         }
       },
-
       managePlaceholder() {
         if (this.currentPlaceholder !== '') {
           this.currentPlaceholder = this.$refs.input.value ? '' : this.cachedPlaceHolder;
         }
       },
-
       resetInputState(e) {
         if (e.keyCode !== 8) this.toggleLastOptionHitState(false);
         this.inputLength = this.$refs.input.value.length * 15 + 20;
         this.resetInputHeight();
       },
-
       resetInputHeight() {
         if (this.collapseTags && !this.filterable) return;
         this.$nextTick(() => {
@@ -646,7 +601,6 @@
           }
         });
       },
-
       resetHoverIndex() {
         setTimeout(() => {
           if (!this.multiple) {
@@ -660,7 +614,6 @@
           }
         }, 300);
       },
-
       handleOptionSelect(option, byClick) {
         if (this.multiple) {
           const value = this.value.slice();
@@ -690,7 +643,6 @@
           this.scrollToOption(option);
         });
       },
-
       setSoftFocus() {
         this.softFocus = true;
         const input = this.$refs.input || this.$refs.reference;
@@ -698,7 +650,6 @@
           input.focus();
         }
       },
-
       getValueIndex(arr = [], value) {
         const isObject = Object.prototype.toString.call(value).toLowerCase() === '[object object]';
         if (!isObject) {
@@ -716,7 +667,6 @@
           return index;
         }
       },
-
       toggleMenu() {
         if (!this.selectDisabled) {
           if (this.menuVisibleOnFocus) {
@@ -729,7 +679,6 @@
           }
         }
       },
-
       selectOption() {
         if (!this.visible) {
           this.toggleMenu();
@@ -739,7 +688,6 @@
           }
         }
       },
-
       deleteSelected(event) {
         event.stopPropagation();
         const value = this.multiple ? [] : '';
@@ -748,7 +696,6 @@
         this.visible = false;
         this.$emit('clear');
       },
-
       deleteTag(event, tag) {
         let index = this.selected.indexOf(tag);
         if (index > -1 && !this.selectDisabled) {
@@ -760,14 +707,12 @@
         }
         event.stopPropagation();
       },
-
       onInputChange() {
         if (this.filterable && this.query !== this.selectedLabel) {
           this.query = this.selectedLabel;
           this.handleQueryChange(this.query);
         }
       },
-
       onOptionDestroy(index) {
         if (index > -1) {
           this.optionsCount--;
@@ -775,16 +720,13 @@
           this.options.splice(index, 1);
         }
       },
-
       resetInputWidth() {
         this.inputWidth = this.$refs.reference.$el.getBoundingClientRect().width;
       },
-
       handleResize() {
         this.resetInputWidth();
         if (this.multiple) this.resetInputHeight();
       },
-
       checkDefaultFirstOption() {
         this.hoverIndex = -1;
         // highlight the created option
@@ -814,7 +756,6 @@
           }
         }
       },
-
       getValueKey(item) {
         if (Object.prototype.toString.call(item.value).toLowerCase() !== '[object object]') {
           return item.value;
@@ -823,7 +764,6 @@
         }
       }
     },
-
     created() {
       this.cachedPlaceHolder = this.currentPlaceholder = this.placeholder;
       if (this.multiple && !Array.isArray(this.value)) {
@@ -832,25 +772,20 @@
       if (!this.multiple && Array.isArray(this.value)) {
         this.$emit('input', '');
       }
-
       this.debouncedOnInputChange = debounce(this.debounce, () => {
         this.onInputChange();
       });
-
       this.debouncedQueryChange = debounce(this.debounce, (e) => {
         this.handleQueryChange(e.target.value);
       });
-
       this.$on('handleOptionClick', this.handleOptionSelect);
       this.$on('setSelected', this.setSelected);
     },
-
     mounted() {
       if (this.multiple && Array.isArray(this.value) && this.value.length > 0) {
         this.currentPlaceholder = '';
       }
       addResizeListener(this.$el, this.handleResize);
-
       const reference = this.$refs.reference;
       if (reference && reference.$el) {
         const sizeMap = {
@@ -870,7 +805,6 @@
       });
       this.setSelected();
     },
-
     beforeDestroy() {
       if (this.$el && this.handleResize) removeResizeListener(this.$el, this.handleResize);
     }

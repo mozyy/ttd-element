@@ -2,7 +2,7 @@ Arguments:
   D:\Program Files\nodejs\node.exe D:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
-  D:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;D:\work\ttd-element\node_modules\.bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\PC028\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;D:\Program Files (x86)\Yarn\bin;C:\Go\bin;C:\Users\PC028\AppData\Local\Microsoft\WindowsApps;C:\Users\PC028\AppData\Roaming\npm;C:\Users\PC028\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\PC028\AppData\Local\Yarn\bin;C:\Users\PC028\go\bin
+  D:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;D:\work\ttd-element\node_modules\.bin;D:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;D:\work\ttd-element\node_modules\.bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\PC028\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;D:\Program Files (x86)\Yarn\bin;C:\Go\bin;C:\Users\PC028\AppData\Local\Microsoft\WindowsApps;C:\Users\PC028\AppData\Roaming\npm;C:\Users\PC028\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\PC028\AppData\Local\Yarn\bin;C:\Users\PC028\go\bin
 
 Yarn version: 
   1.9.4
@@ -14,7 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, lstat 'D:\work\ttd-element\node_modules\@vue\component-compiler-utils'
+  Error: connect ETIMEDOUT 104.16.16.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1191:14)
 
 npm manifest: 
   {

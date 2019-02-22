@@ -29,7 +29,7 @@
       ],
       "plugins": [
         ["module-resolver", {
-          "root": ["ttd-element"],
+          "root": ["ttd-element","element-ui"],
           "alias": {
             "element-ui/src": "ttd-element/lib",
             "ttd-element/src": "ttd-element/lib",
