@@ -32,7 +32,7 @@
           <img src="../assets/images/qrcode.png" alt="">
         </el-popover>
         <i class="doc-icon-weixin elementdoc" v-popover:weixin></i>
-        <a href="https://github.com/elemefe" target="_blank">
+        <a href="https://github.com/mozyy/ttd-element" target="_blank">
           <i class="doc-icon-github elementdoc"></i>
         </a>
         <a :href="gitterLink" target="_blank">
